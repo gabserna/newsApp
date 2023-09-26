@@ -7,8 +7,9 @@ import { NewsService } from '../news.service';
   styleUrls: ['./news-list.component.css']
 })
 export class NewsListComponent implements OnInit {
-  @Input() selectedCategory: string = 'business';
+  // @Input() selectedCategory: string = 'business';
   headlines: any;
+  selectedCategory: string = 'business';
 
   constructor(private newsService: NewsService) { }
 
@@ -21,6 +22,12 @@ export class NewsListComponent implements OnInit {
       this.headlines = data.articles;
     });
   }
+
+  onCategoryChanged(category: string) {
+    this.selectedCategory = category;
+    this.getNews();
+  }
+  
 }
 
 

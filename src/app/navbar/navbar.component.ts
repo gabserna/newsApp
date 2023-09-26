@@ -7,7 +7,7 @@ import { MatButtonToggleChange } from '@angular/material/button-toggle';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  selectedCategory: string = 'business'; // Valor predeterminado
+  selectedCategory: string = 'business';
   @Output() categoryChanged = new EventEmitter<string>();
 
   onCategoryChange(event: MatButtonToggleChange) {

@@ -7,7 +7,7 @@ import { NewsService } from '../news.service';
   styleUrls: ['./news-list.component.css']
 })
 export class NewsListComponent implements OnInit {
-  @Input() selectedCategory: string = 'business'; // Utiliza @Input() para recibir la categoría desde el componente padre
+  @Input() selectedCategory: string = 'business';
   headlines: any;
 
   constructor(private newsService: NewsService) { }

@@ -1,0 +1,13 @@
+<div class="news-list">
+  <h2>News</h2>
+  <div class="category-selector">
+    <p>Category: {{ selectedCategory }}</p>
+  </div>
+  <div class="news-items">
+    <div *ngFor="let article of headlines" class="news-item">
+      <h3>{{ article.title }}</h3>
+      <p>{{ article.description }}</p>
+      <a href="{{ article.url }}" target="_blank">Read more:</a>
+    </div>
+  </div>
+</div>

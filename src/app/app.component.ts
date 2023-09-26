@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'newsApp';
+  selectedCategory: string = 'business';
+
+  onCategoryChanged(category: string) {
+    this.selectedCategory = category;
+  }
 }

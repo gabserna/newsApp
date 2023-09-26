@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>News  </span>
+    <mat-divider [vertical]="true"></mat-divider>
+    <mat-button-toggle-group [(ngModel)]="selectedCategory" (change)="onCategoryChange($event)">
+      <mat-button-toggle value="business">Business</mat-button-toggle>
+      <mat-button-toggle value="entertainment">Entertainment</mat-button-toggle>
+      <mat-button-toggle value="general">General</mat-button-toggle>
+      <mat-button-toggle value="health">Health</mat-button-toggle>
+      <mat-button-toggle value="science">Science</mat-button-toggle>
+      <mat-button-toggle value="sports">Sports</mat-button-toggle>
+      <mat-button-toggle value="technology">Technology</mat-button-toggle>
+    </mat-button-toggle-group>
+  </mat-toolbar-row>
+</mat-toolbar>

@@ -2,7 +2,7 @@
   <mat-toolbar-row>
     <span>Select Categories</span>
     <mat-divider [vertical]="true"></mat-divider>
-    <mat-button-toggle-group [(ngModel)]="selectedCategory" (change)="onCategoryChange($event)">
+    <mat-button-toggle-group [(ngModel)]="selectedCategory" (change)="onCategoryChange($event)" appearance="legacy" name="fontStyle" aria-label="Font Style">
       <mat-button-toggle value="Business">Business</mat-button-toggle>
       <mat-button-toggle value="Entertainment">Entertainment</mat-button-toggle>
       <mat-button-toggle value="General">General</mat-button-toggle>

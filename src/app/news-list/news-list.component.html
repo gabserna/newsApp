@@ -4,11 +4,17 @@
     <p>Category: {{ selectedCategory }}</p>
   </div>
   <div class="news-items">
-    <div *ngFor="let article of headlines" class="news-item">
-      <h3>{{ article.title }}</h3>
-      <p>{{ article.description }}</p>
-      <a href="{{ article.url }}" target="_blank">Read more:</a>
-    </div>
+    <mat-card *ngFor="let article of headlines" class="news-item">
+      <mat-card-header>
+        <mat-card-title>{{ article.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ article.description }}</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <a mat-button [href]="article.url" target="_blank">Read more</a>
+      </mat-card-actions>
+    </mat-card>
+    <mat-divider></mat-divider>
   </div>
-  <mat-divider></mat-divider>
 </div>

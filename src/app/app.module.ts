@@ -13,6 +13,8 @@ import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
 import { NewsService } from './news.service';
+import {MatCardModule} from '@angular/material/card';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { NewsService } from './news.service';
     MatButtonToggleModule,
     FormsModule,
     MatDividerModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    MatIconModule
   ],
   providers: [NewsService],
   bootstrap: [AppComponent]

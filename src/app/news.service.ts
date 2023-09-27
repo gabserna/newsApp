@@ -6,15 +6,13 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class NewsService {
-  private apiKey = environment.apiKey;
-  // private apiKey = 'b29c939a0d9a42319b5b03b6de190043';
+  // private apiKey = environment.apiKey;
+  private apiKey = 'b29c939a0d9a42319b5b03b6de190043';
 
   constructor(private http: HttpClient) { }
 
   getTopHeadlines(category: string) {
-    return this.http.get(`https://newsapi.org/v2/top-headlines/sources?country=us&category=${category}&apiKey=${this.apiKey}`);
+    return this.http.get(`https://newsapi.org/v2/top-headlines?country=US&category=${category}&apiKey=${this.apiKey}`);
   }
-}
 
-// running OK!!!
-// https://newsapi.org/v2/top-headlines/sources?country=us&category=sports&apiKey=b29c939a0d9a42319b5b03b6de190043
+}

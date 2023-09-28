@@ -1,6 +1,5 @@
-<app-navbar (categoryChanged)="onCategoryChanged($event)"></app-navbar>
-
-<div>
-  <app-news-list [selectedCategory]="selectedCategory"></app-news-list>
-
+<div class="container">
+  <app-navbar (categoryChanged)="onCategoryChanged($event)"></app-navbar>
+  <!-- <app-news-list [selectedCategory]="selectedCategory"></app-news-list> -->
+  <router-outlet></router-outlet>
 </div>

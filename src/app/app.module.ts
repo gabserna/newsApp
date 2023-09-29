@@ -30,7 +30,7 @@ import { SearchComponent } from './components/search/search.component';
     BrowserAnimationsModule,
     FormsModule,
     MaterialModule,
-    AngularFireModule.initializeApp(environment.firebase), // <-- add this
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
   ],
   providers: [NewsService],

@@ -10,6 +10,7 @@ import { FormsModule } from '@angular/forms';
 import { NewsService } from './services/news.service';
 import { MaterialModule } from './modules/material.module';
 import { LoginComponent } from './components/login/login.component';
+import { RegistrationComponent } from './components/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { LoginComponent } from './components/login/login.component';
     NewsListComponent,
     NavbarComponent,
     LoginComponent,
+    RegistrationComponent,
   ],
   imports: [
     BrowserModule,

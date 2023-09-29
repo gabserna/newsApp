@@ -13,6 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { environment} from "../environments/environment";
 import { AngularFireModule } from "@angular/fire/compat";
 import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { AngularFirestoreModule } from "@angular/fire/compat/firestore";
     NewsListComponent,
     NavbarComponent,
     LoginComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,

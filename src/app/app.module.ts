@@ -11,6 +11,9 @@ import { NewsService } from './services/news.service';
 import { MaterialModule } from './modules/material.module';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { environment } from '../environments/environment';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 @NgModule({
   declarations: [
@@ -27,6 +30,8 @@ import { RegistrationComponent } from './components/registration/registration.co
     BrowserAnimationsModule,
     FormsModule,
     MaterialModule,
+    AngularFireModule.initializeApp(environment.firebase), // <-- add this
+    AngularFirestoreModule,
   ],
   providers: [NewsService],
   bootstrap: [AppComponent],

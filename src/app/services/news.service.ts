@@ -24,4 +24,17 @@ export class NewsService {
         })
       );
   }
+
+  searchArticles(filters: string) {
+    return this.http
+      .get(
+        `https://newsapi.org/v2/everything?${filters}&apiKey=${this.apiKey}`
+      )
+      .pipe(
+        catchError((error: any) => {
+          console.error('Error: ', error);
+          return throwError(error);
+        })
+      );
+  }
 }

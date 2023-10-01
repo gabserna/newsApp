@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, throwError } from 'rxjs'; // Importa catchError y throwError desde RxJS
+import { catchError, throwError } from 'rxjs';
 // import { environment } from 'src/environments/environment';
 
 @Injectable({

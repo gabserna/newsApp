@@ -1,14 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, throwError } from 'rxjs';
-// import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NewsService {
-  // private apiKey = environment.apiKey;
-  private apiKey = 'b29c939a0d9a42319b5b03b6de190043';
+  private apiKey = environment.newsApi.apiKey;
 
   constructor(private http: HttpClient) {}
 

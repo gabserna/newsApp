@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { NewsService } from '../../services/news.service';
 
 @Component({
@@ -6,28 +6,29 @@ import { NewsService } from '../../services/news.service';
   templateUrl: './news-list.component.html',
   styleUrls: ['./news-list.component.css'],
 })
-export class NewsListComponent implements OnInit {
+export class NewsListComponent implements OnInit, OnChanges {
   @Input() selectedCategory: string = 'business';
   headlines: any;
-  // selectedCategory: string = 'business';
-
   constructor(private newsService: NewsService) {}
 
   ngOnInit() {
-    this.getNews();
+    this.getNews(this.selectedCategory);
+  }
+  ngOnChanges() {
+    this.getNews(this.selectedCategory);
   }
 
-  getNews() {
+  getNews(category: string) {
     this.newsService
-      .getTopHeadlines(this.selectedCategory)
+      .getTopHeadlines(category)
       .subscribe((data: any) => {
         this.headlines = data.articles;
         console.log(this.headlines);
       });
   }
 
-  onCategoryChanged(category: string) {
-    this.selectedCategory = category;
-    this.getNews();
+  onCategoryChanged(event: any) {
+    console.log(event);
+    this.getNews(this.selectedCategory);
   }
 }

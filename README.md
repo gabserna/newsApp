@@ -94,3 +94,18 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+
+
+
+
+
+# me
+```
+Top-Headlines (Titulares principales):
+- Debe llenar la página con artículos de noticias del endpoint 'top-headlines' de la API.
+- Debe permitir al usuario filtrar artículos según las categorías disponibles.
+- Debe permitir al usuario dar "Me gusta" o seguir un artículo.
+^ Agregará la URL del artículo al "Objeto de artículos favoritos del usuario".
+```

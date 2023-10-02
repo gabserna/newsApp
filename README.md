@@ -4,6 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Requirements
 
+```
 Application Set-Up: 
     - Create Database for User Information Storage
     - Creation of User Model That Must Inclued
@@ -67,7 +68,7 @@ Pages:
                 > A Section to Populate with Top Liked News Articles From Across Users
                 > A Section to Populate with Liked news Articles from Current Logged in User
             - Minimum Content Loaded Should be The URL and Thumbnails of Articles
-
+```
 
 
 ## Development server

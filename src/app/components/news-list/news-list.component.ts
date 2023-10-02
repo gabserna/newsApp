@@ -7,7 +7,7 @@ import { NewsService } from '../../services/news.service';
   styleUrls: ['./news-list.component.css'],
 })
 export class NewsListComponent implements OnInit, OnChanges {
-  @Input() selectedCategory: string = 'business';
+  @Input() selectedCategory: string = 'general';
   headlines: any;
   constructor(private newsService: NewsService) {}
 

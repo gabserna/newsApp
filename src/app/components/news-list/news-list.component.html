@@ -11,9 +11,30 @@
       <mat-card-content>
         <p>{{ article.description }}</p>
       </mat-card-content>
-      <mat-card-actions>
-        <a mat-button [href]="article.url" target="_blank">Read more</a>
-      </mat-card-actions>
+
+      <mat-card-content id="actions">
+        <mat-card-actions>
+          <a mat-button [href]="article.url" target="_blank">
+            <mat-icon
+              aria-hidden="false"
+              aria-label="icon"
+              fontIcon="launch"
+            ></mat-icon>
+            Open</a>
+        </mat-card-actions>
+
+        <mat-card-actions>
+          <a mat-button [href]="" target="_blank">
+            <mat-icon
+              aria-hidden="false"
+              aria-label="icon"
+              fontIcon="thumb_up"
+            ></mat-icon>
+            Like
+          </a>
+        </mat-card-actions>
+
+      </mat-card-content>
     </mat-card>
     <mat-divider></mat-divider>
   </div>

@@ -1,1 +1,20 @@
-<p>search works!</p>
+<div class="search-box">
+    <h2>Search Results</h2>
+    <div class="search-fiters">
+        <p>Searching For: {{ searchFilter }}</p>
+    </div>
+    <div class="search-results">
+        <mat-card *ngFor="let article of headlines" class="news-item">
+            <mat-card-header>
+                <mat-card-title>{{ article.title }}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>{{ article.description }}</p>
+            </mat-card-content>
+            <mat-card-actions>
+                <a mat-button [href]="article.url" target="_blank">Read more</a>
+            </mat-card-actions>
+        </mat-card>
+        <mat-divider></mat-divider>
+    </div>
+</div>

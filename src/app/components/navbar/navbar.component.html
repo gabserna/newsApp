@@ -1,16 +1,22 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <img src="./assets/news_logo.png" alt="logo" width="60">        <!-- mtech news???? -->
-    <span>News Categories</span>
+    <img src="./assets/news_logo.png" alt="logo" width="100" />
+    <span *ngIf="windowInnerWidth > 768">News Categories</span>
     <mat-divider [vertical]="true"></mat-divider>
-    <mat-button-toggle-group [(ngModel)]="selectedCategory" (change)="onCategoryChange($event)" appearance="legacy" name="fontStyle" aria-label="Font Style">
-      <mat-button-toggle value="General">General</mat-button-toggle>
-      <mat-button-toggle value="Business">Business</mat-button-toggle>
-      <mat-button-toggle value="Entertainment">Entertainment</mat-button-toggle>
-      <mat-button-toggle value="Health">Health</mat-button-toggle>
-      <mat-button-toggle value="Science">Science</mat-button-toggle>
-      <mat-button-toggle value="Sports">Sports</mat-button-toggle>
-      <mat-button-toggle value="Technology">Technology</mat-button-toggle>
+    <mat-button-toggle-group
+      [(ngModel)]="selectedCategory"
+      (change)="onCategoryChange($event)"
+      appearance="legacy"
+      name="fontStyle"
+      aria-label="Font Style"
+    >
+      <mat-button-toggle
+        *ngFor="let category of categories"
+        [value]="category.name"
+      >
+        <mat-icon *ngIf="windowInnerWidth <= 768">{{ category.icon }}</mat-icon>
+        <span *ngIf="windowInnerWidth > 768">{{ category.name }}</span>
+      </mat-button-toggle>
     </mat-button-toggle-group>
   </mat-toolbar-row>
 </mat-toolbar>

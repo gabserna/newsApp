@@ -1,7 +1,11 @@
 <div class="news-list">
-  <h2>Top Headers</h2>
+  <mat-card-title id="topHeadlinesTitle">
+    <h1 class="h1Headlines">Top Headlines</h1>
+    <h2 class="h2Headlines">{{ selectedCategory }}</h2>
+  </mat-card-title>
+  
+
   <div class="category-selector">
-    <p>Selected: {{ selectedCategory }}</p>
   </div>
   <div class="news-items">
     <mat-card *ngFor="let article of headlines" class="news-item">
@@ -14,7 +18,7 @@
 
       <mat-card-content id="actions">
         <mat-card-actions>
-          <a mat-button [href]="article.url" target="_blank">
+          <a mat-button [href]="article.url" target="_blank" class="cardButton">
             <mat-icon
               aria-hidden="false"
               aria-label="icon"
@@ -24,7 +28,7 @@
         </mat-card-actions>
 
         <mat-card-actions>
-          <a mat-button [href]="" target="_blank">
+          <a mat-button [href]="" target="_blank" class="cardButton">
             <mat-icon
               aria-hidden="false"
               aria-label="icon"

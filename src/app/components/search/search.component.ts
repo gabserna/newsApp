@@ -7,7 +7,7 @@ import { NewsService } from "../../services/news.service";
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit{
-  @Input() searchFilter: string = 'busisness';
+  @Input() searchFilter: string = 'business';
   headlines:any
 
   constructor( private newsService: NewsService) {}

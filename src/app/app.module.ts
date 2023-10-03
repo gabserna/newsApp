@@ -14,6 +14,7 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     NavbarComponent,
     LoginComponent,
     RegistrationComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

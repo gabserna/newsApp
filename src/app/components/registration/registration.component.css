@@ -1,0 +1,27 @@
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+.login-card {
+  width: 400px;
+}
+
+button {
+  margin: 0 auto;
+}
+
+.mat-mdc-card-header {
+  display: flex;
+  flex-direction: column;
+}
+
+span {
+  text-align: center;
+}

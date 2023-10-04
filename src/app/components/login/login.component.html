@@ -1,1 +1,35 @@
-<p>login works!</p>
+<div class="container">
+  <mat-card class="login-card">
+    <mat-card-header>
+      <h2>Login</h2>
+      <mat-form-field class="example-full-width">
+        <mat-label>Username</mat-label>
+        <input matInput type="text" #userName />
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Password</mat-label>
+        <input matInput type="password" #userPassword />
+      </mat-form-field>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-divider></mat-divider>
+    </mat-card-content>
+    <mat-card-actions>
+      <button
+        mat-button
+        (click)="authService.SignIn(userName.value, userPassword.value)"
+      >
+        Login
+      </button>
+    </mat-card-actions>
+    <mat-card-footer>
+      <span>Or</span>
+      <span class="forgotPassword" routerLink="/forgot-password"
+        >Forgot Password?</span
+      >
+      <span>Don't have an account?</span>
+      <span class="SignUp" routerLink="/register">Sign Up</span>
+      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+    </mat-card-footer>
+  </mat-card>
+</div>

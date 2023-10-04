@@ -1,5 +1,11 @@
 <div class="container">
   <app-navbar (categoryChanged)="onCategoryChanged($event)"></app-navbar>
-  <app-news-list [selectedCategory]="selectedCategory"></app-news-list>
-  <router-outlet></router-outlet>
+  <app-search></app-search>
+  <app-news-list [selectedCategory]="selectedCategory">
+    
+  </app-news-list>
+  
+  
+  <!-- router-outlet its duplicating the whole content!!! -->
+  <!-- <router-outlet></router-outlet> -->
 </div>

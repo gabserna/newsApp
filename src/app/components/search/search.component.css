@@ -1,0 +1,55 @@
+h1,
+h2 {
+  margin-top: 1rem;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  color: #0a3161;
+  padding: 1vh;
+  margin: 0;
+}
+
+.h1Headlines {
+  background-color: #0a3161;
+  font-size: 2.5vw;
+}
+
+.h2Headlines {
+  background-color: #d90429;
+}
+
+.news-list {
+  margin: 0 auto;
+  width: 90%;
+}
+
+mat-card {
+  margin: 10px;
+  background-color: #d1d7dc;
+}
+
+mat-card-header {
+  display: flex;
+  flex-direction: column;
+}
+
+#actions {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+}
+
+.cardButton {
+  background-color: #003566;
+  padding: 5px 10px;
+  text-decoration: none;
+  border: none;
+}
+
+a {
+    color: white !important;
+}
+.cardButton:hover {
+  background-color: #d90429;
+}

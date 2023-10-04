@@ -6,30 +6,35 @@ import { NewsService } from "../../services/news.service";
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent implements OnInit{
-  @Input() searchFilter: string = 'business';
-  headlines:any
+export class SearchComponent implements OnInit {
+  searchResults: { title: string, url: string }[] = [];
+  @Input() searchFilter = '';
+  headlines: any;
 
-  constructor( private newsService: NewsService) {}
+  constructor(private newsService: NewsService) {}
 
   ngOnInit(): void {
-    this.getSearchResults()
+    this.getSearchResults();
   }
 
   getSearchResults() {
-
     this.newsService
       .searchArticles(this.searchFilter)
       .subscribe((data: any) => {
         this.headlines = data.articles;
         console.log(this.headlines);
-      })
-
+        this.searchResults = this.headlines.map((article: any) => {
+          return {
+            title: article.title,
+            url: article.url
+          };
+        });
+      });
   }
 
-  onFilterChange(filter: string) {
+  onFilterChange(event: any) {
+    const filter = event.target.value;
     this.searchFilter = filter;
-    this.getSearchResults()
+    this.getSearchResults();
   }
-
 }

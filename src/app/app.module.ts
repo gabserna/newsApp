@@ -14,6 +14,12 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { MatIconModule } from '@angular/material/icon';
 import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
@@ -23,7 +29,9 @@ import { SearchComponent } from './components/search/search.component';
     NavbarComponent,
     LoginComponent,
     RegistrationComponent,
-    SearchComponent
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,6 +42,10 @@ import { SearchComponent } from './components/search/search.component';
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    MatIconModule,
   ],
   providers: [NewsService],
   bootstrap: [AppComponent],

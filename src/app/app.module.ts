@@ -21,6 +21,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { MatIconModule } from '@angular/material/icon';
 import { SearchComponent } from './components/search/search.component';
+import { SubmenuComponent } from './components/submenu/submenu.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { SearchComponent } from './components/search/search.component';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     SearchComponent,
+    SubmenuComponent,
   ],
   imports: [
     BrowserModule,

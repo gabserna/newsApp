@@ -1,9 +1,9 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
     <img src="./assets/news_logo.png" alt="logo" width="100" />
-    <span *ngIf="windowInnerWidth > 768">News Categories</span>
+    <!-- <span *ngIf="windowInnerWidth > 768">News Categories</span> -->
     <mat-divider [vertical]="true"></mat-divider>
-    <mat-button-toggle-group
+    <!-- <mat-button-toggle-group
       [(ngModel)]="selectedCategory"
       (change)="onCategoryChange($event)"
       appearance="legacy"
@@ -17,7 +17,7 @@
         <mat-icon *ngIf="windowInnerWidth <= 768">{{ category.icon }}</mat-icon>
         <span *ngIf="windowInnerWidth > 768">{{ category.name }}</span>
       </mat-button-toggle>
-    </mat-button-toggle-group>
+    </mat-button-toggle-group> -->
 
     <span
       *ngIf="authService.isLoggedIn"

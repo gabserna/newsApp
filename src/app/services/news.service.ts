@@ -7,7 +7,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class NewsService {
-  private apiKey = environment.newsApiThree.apiKey;
+  private apiKey = environment.newsApiFour.apiKey;
 
   constructor(private http: HttpClient) {}
 

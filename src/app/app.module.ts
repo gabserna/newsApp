@@ -11,10 +11,11 @@ import { NewsService } from './services/news.service';
 import { MaterialModule } from './modules/material.module';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { SearchComponent } from './components/search/search.component';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
-import { SearchComponent } from './components/search/search.component';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { SearchComponent } from './components/search/search.component';
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [NewsService],
   bootstrap: [AppComponent],

@@ -9,6 +9,7 @@ import { NewsService } from "../../services/news.service";
 export class SearchComponent implements OnInit {
   searchResults: { title: string, url: string }[] = [];
   @Input() searchFilter = '';
+  // @Input() searchFilter = 'apple';
   headlines: any;
 
   constructor(private newsService: NewsService) {}

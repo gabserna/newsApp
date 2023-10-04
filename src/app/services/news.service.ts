@@ -27,7 +27,7 @@ export class NewsService {
   searchArticles(filters: string) {
     return this.http
       .get(
-        `https://newsapi.org/v2/everything?${filters}&apiKey=${this.apiKey}`
+        `https://newsapi.org/v2/everything?q=${filters}&sortBy=publishedAt&apiKey=${this.apiKey}`
       )
       .pipe(
         catchError((error: any) => {

@@ -13,7 +13,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
-import { FirestoreModule } from '@angular/fire/firestore';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
@@ -23,7 +23,7 @@ import { SearchComponent } from './components/search/search.component';
     NavbarComponent,
     LoginComponent,
     RegistrationComponent,
-    SearchComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +33,7 @@ import { SearchComponent } from './components/search/search.component';
     FormsModule,
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
-    FirestoreModule,
+    AngularFirestoreModule,
   ],
   providers: [NewsService],
   bootstrap: [AppComponent],

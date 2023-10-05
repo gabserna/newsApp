@@ -3,6 +3,7 @@ import { MatButtonToggleChange } from '@angular/material/button-toggle';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/categories.service';
+import { NewsService } from 'src/app/services/news.service';
 
 @Component({
   selector: 'app-navbar',
@@ -17,7 +18,11 @@ export class NavbarComponent implements OnInit {
   showSearchComponent: boolean = false;
   newsListComponent: boolean = false;
 
-  constructor(private router: Router, public authService: AuthService, private categoryService: CategoryService) {
+  constructor(
+    private router: Router, 
+    public authService: AuthService, 
+    private categoryService: CategoryService,
+    public newsService: NewsService) {
     this.windowInnerWidth = window.innerWidth;
   }
 

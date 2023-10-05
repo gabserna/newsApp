@@ -2,15 +2,24 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
-import { throwError } from 'rxjs';
+import { Subject, throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NewsService {
   private apiKey = environment.newsApiFive.apiKey;
+  private selectedCategory = new Subject<string>();
+
+  selectedCategory$ = this.selectedCategory.asObservable();
 
   constructor(private http: HttpClient) {}
+
+  show(category:string) {
+    this.selectedCategory.next(category);
+    console.log(typeof category);
+    
+  }
 
   getTopHeadlines(category: string) {
     return this.http

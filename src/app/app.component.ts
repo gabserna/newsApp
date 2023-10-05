@@ -19,4 +19,8 @@ export class AppComponent {
       // console.log('Is login page?', this.isLoginPage);
     });
   }
+
+  onCategoryChanged(category: string) {
+    this.selectedCategory = category;
+  }
 }

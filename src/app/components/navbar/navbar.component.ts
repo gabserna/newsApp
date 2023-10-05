@@ -1,8 +1,8 @@
 import { Component, EventEmitter, Output, OnInit, HostListener } from '@angular/core';
 import { MatButtonToggleChange } from '@angular/material/button-toggle';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
-import { CategoryService } from '../../services/categories.service';
+import { CategoryService } from 'src/app/services/categories.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,25 +10,18 @@ import { CategoryService } from '../../services/categories.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  [x: string]: any;
   isAuthenticated: boolean = false;
   windowInnerWidth: number;
 
   categories = this.categoryService.categories;
-
   showSearchComponent: boolean = false;
   newsListComponent: boolean = false;
 
-  constructor(
-    private router: Router,
-    public authService: AuthService,
-    private categoryService: CategoryService
-  ) {
+  constructor(private router: Router, public authService: AuthService, private categoryService: CategoryService) {
     this.windowInnerWidth = window.innerWidth;
   }
 
-  selectedCategory: string = 'business';
-
+  selectedCategory: string = 'general';
   @Output() categoryChanged = new EventEmitter<string>();
 
   @HostListener('window:resize', ['$event'])
@@ -52,4 +45,5 @@ export class NavbarComponent implements OnInit {
       this.isAuthenticated = authenticated;
     });
   }
+
 }

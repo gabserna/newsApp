@@ -8,7 +8,7 @@ import { throwError } from 'rxjs';
   providedIn: 'root',
 })
 export class NewsService {
-  private apiKey = environment.newsApi.apiKey;
+  private apiKey = environment.newsApiFive.apiKey;
 
   constructor(private http: HttpClient) {}
 

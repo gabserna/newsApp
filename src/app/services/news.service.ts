@@ -32,7 +32,7 @@ export class NewsService {
       )
       .pipe(
         catchError((error: any) => {
-          console.error('Error en la solicitud a la API:', error);
+          console.error('API request failed:', error);
           return throwError(error);
         })
       );

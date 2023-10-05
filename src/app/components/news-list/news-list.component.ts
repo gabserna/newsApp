@@ -17,6 +17,7 @@ export class NewsListComponent implements OnInit, OnChanges {
   ngOnInit() {
     this.getNews(this.selectedCategory);
   }
+
   ngOnChanges() {
     this.getNews(this.selectedCategory);
   }
@@ -24,13 +25,12 @@ export class NewsListComponent implements OnInit, OnChanges {
   getNews(category: string) {
     this.newsService.getTopHeadlines(category).subscribe((data: any) => {
       this.headlines = data.articles;
-      console.log(this.headlines);
     });
   }
-
-  onCategoryChange(event: string) {
-    console.log(event, 'received');
-    this.selectedCategory = event;
-    this.getNews(this.selectedCategory);
-  }
+  // onCategoryChange(event: string) {
+  //   console.log(event, 'received');
+  //   this.selectedCategory = event;
+  //   this.getNews(this.selectedCategory);
+  // }
 }
+

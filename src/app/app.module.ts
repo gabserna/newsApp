@@ -21,7 +21,6 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { MatIconModule } from '@angular/material/icon';
 import { SearchComponent } from './components/search/search.component';
-import { SubmenuComponent } from './components/submenu/submenu.component';
 import { CategoryService } from './services/categories.service';
 import { AuthService } from './services/auth.service';
 
@@ -35,7 +34,6 @@ import { AuthService } from './services/auth.service';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     SearchComponent,
-    SubmenuComponent,
   ],
   imports: [
     BrowserModule,

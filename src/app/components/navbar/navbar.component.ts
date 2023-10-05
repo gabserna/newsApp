@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output, OnInit, HostListener } from '@angular/core';
 import { MatButtonToggleChange } from '@angular/material/button-toggle';
 import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/categories.service';
 
 @Component({
@@ -13,8 +14,10 @@ export class NavbarComponent implements OnInit {
   windowInnerWidth: number;
 
   categories = this.categoryService.categories;
+  showSearchComponent: boolean = false;
+  newsListComponent: boolean = false;
 
-  constructor(public authService: AuthService, private categoryService: CategoryService) {
+  constructor(private router: Router, public authService: AuthService, private categoryService: CategoryService) {
     this.windowInnerWidth = window.innerWidth;
   }
 
@@ -29,6 +32,12 @@ export class NavbarComponent implements OnInit {
   onCategoryChange(event: MatButtonToggleChange) {
     this.selectedCategory = event.value;
     this.categoryChanged.emit(this.selectedCategory);
+  
+    if (event.value === 'Search') {
+      this.router.navigate(['search']);
+    } else if (event.value === 'Start') {
+      this.router.navigate(['top-headlines']);
+    }
   }
 
   ngOnInit(): void {

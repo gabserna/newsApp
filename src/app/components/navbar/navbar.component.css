@@ -1,5 +1,6 @@
 .mat-toolbar-row,
 .mat-toolbar-single-row {
+  /* display: flex; */
   justify-content: space-between;
 }
 
@@ -20,4 +21,11 @@
 
 .material-symbols-outlined, #logout {
     cursor: pointer;
+}
+
+
+@media (max-width: 860px) {
+  mat-button-toggle span {
+    display: none;
+  }
 }

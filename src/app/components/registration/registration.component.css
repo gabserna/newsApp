@@ -17,13 +17,23 @@ button {
   margin: 0 auto;
 }
 
+span {
+  padding: 0.5em;
+  text-align: center;
+  display: block;
+}
+
 .mat-mdc-card-header {
   display: flex;
   flex-direction: column;
 }
 
-span {
+.redirect {
+  display: inline-block;
   text-align: center;
+  color: #4dd5fe;
+  font-size: 14px;
+  cursor: pointer;
 }
 
 .redirect {

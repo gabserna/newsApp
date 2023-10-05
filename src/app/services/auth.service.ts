@@ -6,6 +6,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { take, map } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -14,6 +15,8 @@ export class AuthService {
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
 
   [x: string]: any;
+  private isLoading = new Subject<boolean>();
+  isLoading$ = this.isLoading.asObservable();
   userData: any; // Save logged in user data
   constructor(
     public afs: AngularFirestore, // Inject Firestore service
@@ -36,40 +39,49 @@ export class AuthService {
       }
     });
   }
+
+  show() {
+    this.isLoading.next(true);
+  }
+
+  hide() {
+    this.isLoading.next(false);
+  }
   // Sign in with email/password
   SignIn(email: string, password: string) {
-    return this.afAuth
-      .signInWithEmailAndPassword(email, password)
-      .then((result) => {
-        this.SetUserData(result.user);
-        this.afAuth.authState.subscribe((user) => {
-          if (user) {
-            this.router.navigate(['top-headlines']);
-          }
+    setTimeout(() => {
+      this.isLoading.next(false);
+      return this.afAuth
+        .signInWithEmailAndPassword(email, password)
+        .then((result) => {
+          this.SetUserData(result.user);
+          this.afAuth.authState.subscribe((user) => {
+            if (user) {
+              this.router.navigate(['top-headlines']);
+            }
+          });
+        })
+        .catch((error) => {
+          window.alert(error.message);
         });
-      })
-      .catch((error) => {
-        window.alert(error.message);
-      });
+    }, 2000);
   }
   // Sign up with email/password
   SignUp(email: string, password: string) {
-    return this.afAuth
-      .createUserWithEmailAndPassword(email, password)
-      .then((result) => {
-        /* Call the SendVerificaitonMail() function when new user sign 
-        up and returns promise */
-        this.SendVerificationMail();
-        this.SetUserData(result.user);
-      })
-      .catch((error) => {
-        if (error.code === 'auth/email-already-in-use') {
+    setTimeout(() => {
+      this.isLoading.next(false);
+      return this.afAuth
+        .createUserWithEmailAndPassword(email, password)
+        .then((result) => {
+          /* Call the SendVerificaitonMail() function when new user sign 
+          up and returns promise */
+          this.SendVerificationMail();
+          this.SetUserData(result.user);
+        })
+        .catch((error) => {
           window.alert(error.message);
-          console.log('This email is already registered.');
-        } else {
-          console.error(error);
-        }
-      });
+        });
+    }, 2000);
   }
   // Send email verfificaiton when new user sign up
   SendVerificationMail() {
@@ -81,14 +93,17 @@ export class AuthService {
   }
   // Reset Forggot password
   ForgotPassword(passwordResetEmail: string) {
-    return this.afAuth
-      .sendPasswordResetEmail(passwordResetEmail)
-      .then(() => {
-        window.alert('Password reset email sent, check your inbox.');
-      })
-      .catch((error) => {
-        window.alert(error);
-      });
+    setTimeout(() => {
+      this.isLoading.next(false);
+      return this.afAuth
+        .sendPasswordResetEmail(passwordResetEmail)
+        .then(() => {
+          window.alert('Password reset email sent, check your inbox.');
+        })
+        .catch((error) => {
+          window.alert(error);
+        });
+    }, 2000);
   }
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {
@@ -109,6 +124,7 @@ export class AuthService {
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
     };
+
     return userRef.set(userData, {
       merge: true,
     });

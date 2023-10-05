@@ -1,6 +1,7 @@
 <div class="container">
     <mat-card class="login-card">
     <img src="./assets/news_logo.png" alt="logo" width="400" />
+  <mat-card @routeAnimations class="login-card">
     <mat-card-header>
       <h2>Login</h2>
       <mat-form-field class="example-full-width">
@@ -17,20 +18,34 @@
     </mat-card-content>
     <mat-card-actions>
       <button
-        mat-button
-        (click)="authService.SignIn(userName.value, userPassword.value)"
+        mat-raised-button
+        color="primary"
+        (click)="
+          [
+            authService.show(),
+            authService.SignIn(userName.value, userPassword.value)
+          ]
+        "
       >
         Login
       </button>
     </mat-card-actions>
     <mat-card-footer>
-      <span>Or</span>
-      <span class="forgotPassword" routerLink="/forgot-password"
-        >Forgot Password?</span
-      >
-      <span>Don't have an account?</span>
-      <span class="SignUp" routerLink="/register">Sign Up</span>
-      <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      <span
+        >Or
+        <span class="forgotPassword" routerLink="/forgot-password"
+          >Forgot Password?</span
+        >
+      </span>
+      <span
+        >Don't have an account?
+
+        <span class="SignUp" routerLink="/register">Sign Up</span>
+      </span>
+
+      <mat-progress-bar
+        *ngIf="authService.isLoading$ | async"
+        mode="indeterminate"
+      ></mat-progress-bar>
     </mat-card-footer>
   </mat-card>
-</div>

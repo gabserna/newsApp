@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { catchError, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
 import { environment } from 'src/environments/environment';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -31,7 +32,7 @@ export class NewsService {
       )
       .pipe(
         catchError((error: any) => {
-          console.error('Error: ', error);
+          console.error('Error en la solicitud a la API:', error);
           return throwError(error);
         })
       );

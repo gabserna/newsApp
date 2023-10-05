@@ -1,16 +1,19 @@
 import { Injectable, NgZone } from '@angular/core';
 import { User } from '../interfaces/user';
-import {
-  AngularFirestore,
-  AngularFirestoreDocument,
-} from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { Observable, BehaviorSubject } from 'rxjs';
+import { take, map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+
+  private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
+
+  [x: string]: any;
   userData: any; // Save logged in user data
   constructor(
     public afs: AngularFirestore, // Inject Firestore service
@@ -24,9 +27,11 @@ export class AuthService {
       if (user) {
         this.userData = user;
         localStorage.setItem('user', JSON.stringify(this.userData));
+        this.isAuthenticatedSubject.next(true);
         JSON.parse(localStorage.getItem('user')!);
       } else {
         localStorage.setItem('user', 'null');
+        this.isAuthenticatedSubject.next(false);
         JSON.parse(localStorage.getItem('user')!);
       }
     });
@@ -115,4 +120,9 @@ export class AuthService {
       this.router.navigate(['login']);
     });
   }
+
+  isAuthenticated(): Observable<boolean> {
+    return this.isAuthenticatedSubject.asObservable();
+  }
+  
 }

@@ -1,5 +1,6 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
+
     <mat-button-toggle-group
       [(ngModel)]="selectedCategory"
       (change)="onCategoryChange($event)"
@@ -11,6 +12,7 @@
         <mat-icon>{{ category.icon }}</mat-icon>
         <span>{{ category.name }}</span>
       </mat-button-toggle>
+
     </mat-button-toggle-group>
   </mat-toolbar-row>
 </mat-toolbar>

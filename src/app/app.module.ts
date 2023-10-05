@@ -22,6 +22,8 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 import { MatIconModule } from '@angular/material/icon';
 import { SearchComponent } from './components/search/search.component';
 import { SubmenuComponent } from './components/submenu/submenu.component';
+import { CategoryService } from './services/categories.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,7 @@ import { SubmenuComponent } from './components/submenu/submenu.component';
     AngularFireDatabaseModule,
     MatIconModule,
   ],
-  providers: [NewsService],
+  providers: [AuthService, NewsService, CategoryService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,28 +1,22 @@
-import { Component, EventEmitter, Output, HostListener } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, HostListener } from '@angular/core';
 import { MatButtonToggleChange } from '@angular/material/button-toggle';
 import { AuthService } from 'src/app/services/auth.service';
+import { CategoryService } from 'src/app/services/categories.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
+  isAuthenticated: boolean = false;
   windowInnerWidth: number;
 
-  constructor(public authService: AuthService) {
+  categories = this.categoryService.categories;
+
+  constructor(public authService: AuthService, private categoryService: CategoryService) {
     this.windowInnerWidth = window.innerWidth;
   }
-
-  // categories = [
-  //   { name: 'General', icon: 'description' },
-  //   { name: 'Business', icon: 'add_business' },
-  //   { name: 'Entertainment', icon: 'theater_comedy' },
-  //   { name: 'Health', icon: 'health_and_safety' },
-  //   { name: 'Science', icon: 'biotech' },
-  //   { name: 'Sports', icon: 'sports_football' },
-  //   { name: 'Technology', icon: 'important_devices' },
-  // ];
 
   selectedCategory: string = 'general';
   @Output() categoryChanged = new EventEmitter<string>();
@@ -36,4 +30,11 @@ export class NavbarComponent {
     this.selectedCategory = event.value;
     this.categoryChanged.emit(this.selectedCategory);
   }
+
+  ngOnInit(): void {
+    this.authService.isAuthenticated().subscribe((authenticated) => {
+      this.isAuthenticated = authenticated;
+    });
+  }
+
 }

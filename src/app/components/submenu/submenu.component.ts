@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { MatButtonToggleChange } from '@angular/material/button-toggle';
 import { Router } from '@angular/router';
+import { CategoryService } from '../../services/categories.service';
 
 @Component({
   selector: 'app-submenu',
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
 })
 export class SubmenuComponent {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private categoryService: CategoryService) {}
+  categories = this.categoryService.categories;
 
   showSearchComponent: boolean = false;
   newsListComponent: boolean = false;
@@ -17,34 +19,16 @@ export class SubmenuComponent {
 
   selectedCategory: string = 'general';
   @Output() categoryChanged = new EventEmitter<string>();
-  categories = [
-    { name: 'Home', icon: 'home' },
-    { name: 'General', icon: 'description' },
-    { name: 'Business', icon: 'add_business' },
-    { name: 'Entertainment', icon: 'theater_comedy' },
-    { name: 'Health', icon: 'health_and_safety' },
-    { name: 'Science', icon: 'biotech' },
-    { name: 'Sports', icon: 'sports_football' },
-    { name: 'Technology', icon: 'important_devices' },
-    { name: 'Search', icon: 'search' },
-  ];
 
   onCategoryChange(event: MatButtonToggleChange) {
     this.selectedCategory = event.value;
     this.categoryChanged.emit(this.selectedCategory);
-
+  
     if (event.value === 'Search') {
-      this.router.navigate(['/search']);
-    } else {
-      this.showSearchComponent = false;
+      this.router.navigate(['search']);
+    } else if (event.value === 'Start') {
+      this.router.navigate(['top-headlines']);
     }
-
-
-    if (event.value === 'Home') {
-      this.router.navigate(['/top-headlines']);
-    } else {
-      this.newsListComponent = false;
-    }
-    
   }
+  
 }

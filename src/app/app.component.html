@@ -1,10 +1,8 @@
 <div class="container">
-  <app-navbar (categoryChanged)="onCategoryChanged($event)"></app-navbar>
-  <!-- <app-search></app-search>
-  <app-news-list [selectedCategory]="selectedCategory">
-    
-  </app-news-list> -->
-
-  <!-- router-outlet its duplicating the whole content!!! -->
+  <app-navbar
+    (categoryChanged)="onCategoryChanged($event)"
+    *ngIf="!isLoginPage"
+  ></app-navbar>
   <router-outlet></router-outlet>
+  <!-- <app-news-list [selectedCategory]="selectedCategory"></app-news-list> -->
 </div>

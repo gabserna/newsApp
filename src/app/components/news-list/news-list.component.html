@@ -1,12 +1,8 @@
 <div class="news-list">
-  <!-- <app-submenu (categoryChanged)="onCategoryChanged($event)"></app-submenu> -->
-  <!-- <app-search></app-search> -->
   <mat-card-title id="topHeadlinesTitle">
     <h1 class="h1Headlines">Top Headlines</h1>
     <h2 class="h2Headlines">{{ selectedCategory }}</h2>
   </mat-card-title>
-
-  <div class="category-selector"></div>
 
   <div class="news-items">
     <mat-card *ngFor="let article of headlines" class="news-item">
@@ -25,8 +21,8 @@
               aria-label="icon"
               fontIcon="launch"
             ></mat-icon>
-            Open</a
-          >
+            Open
+          </a>
         </mat-card-actions>
 
         <mat-card-actions>

@@ -1,11 +1,6 @@
 <div class="container">
-  <app-navbar
-    (categoryChanged)="onCategoryChanged($event)"
-    *ngIf="!isLoginPage"
-  ></app-navbar>
+  <app-navbar (categoryChanged)="selectedCategory = $event" *ngIf="!isLoginPage"></app-navbar>
+  <!-- <app-navbar (categoryChanged)="onCategoryChange($event)" *ngIf="!isLoginPage"></app-navbar> -->
+  <app-news-list [selectedCategory]="selectedCategory"></app-news-list>
   <router-outlet></router-outlet>
 </div>
-
-
-
-<!-- <app-news-list [selectedCategory]="selectedCategory"></app-news-list> -->

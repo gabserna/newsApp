@@ -1,6 +1,5 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { NewsService } from '../../services/news.service';
-import { CategoryService } from '../../services/categories.service';
 
 @Component({
   selector: 'app-news-list',
@@ -11,8 +10,7 @@ export class NewsListComponent implements OnInit, OnChanges {
   @Input() selectedCategory: string = 'business';
   headlines: any;
 
-  categories = this.categoryService.categories;
-  constructor(private newsService: NewsService, private categoryService: CategoryService) {}
+  constructor(private newsService: NewsService) {}
 
   ngOnInit() {
     this.getNews(this.selectedCategory);
@@ -27,10 +25,11 @@ export class NewsListComponent implements OnInit, OnChanges {
       this.headlines = data.articles;
     });
   }
-  // onCategoryChange(event: string) {
-  //   console.log(event, 'received');
-  //   this.selectedCategory = event;
-  //   this.getNews(this.selectedCategory);
-  // }
-}
 
+  onCategoryChange(event: string) {
+    console.log(event, 'received');
+    this.selectedCategory = event;
+    this.getNews(this.selectedCategory);
+  }
+  
+}

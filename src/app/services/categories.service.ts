@@ -8,11 +8,11 @@ export class CategoryService {
     // { name: 'Start', icon: 'home' },
     { name: 'General', icon: 'description' },
     { name: 'Business', icon: 'add_business' },
-    { name: 'Social', icon: 'theater_comedy' },
+    { name: 'Entertainment', icon: 'theater_comedy' },
     { name: 'Health', icon: 'health_and_safety' },
     { name: 'Science', icon: 'biotech' },
     { name: 'Sports', icon: 'sports_football' },
-    { name: 'Tech', icon: 'important_devices' },
+    { name: 'Technology', icon: 'important_devices' },
     { name: 'Search', icon: 'search' },
     { name: 'Liked', icon: 'thumb_up' },
   ];

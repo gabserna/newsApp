@@ -7,7 +7,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  [x: string]: any;
   title = 'newsApp';
   selectedCategory: string = 'business';
 
@@ -16,7 +15,6 @@ export class AppComponent {
   constructor(private activatedRoute: ActivatedRoute) {
     this.activatedRoute.url.subscribe((segments) => {
       this.isLoginPage = segments.some((segment) => segment.path === 'login');
-      // console.log('Is login page?', this.isLoginPage);
     });
   }
 }

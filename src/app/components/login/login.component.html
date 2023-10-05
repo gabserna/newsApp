@@ -1,5 +1,5 @@
 <div class="container">
-  <mat-card class="login-card">
+  <mat-card @routeAnimations class="login-card">
     <mat-card-header>
       <h2>Login</h2>
       <mat-form-field class="example-full-width">
@@ -20,7 +20,7 @@
         color="primary"
         (click)="
           [
-            (isLoading = true),
+            authService.show(),
             authService.SignIn(userName.value, userPassword.value)
           ]
         "
@@ -42,7 +42,7 @@
       </span>
 
       <mat-progress-bar
-        *ngIf="isLoading"
+        *ngIf="authService.isLoading$ | async"
         mode="indeterminate"
       ></mat-progress-bar>
     </mat-card-footer>

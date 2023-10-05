@@ -7,10 +7,13 @@ import {
 import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import { Subject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  private isLoading = new Subject<boolean>();
+  isLoading$ = this.isLoading.asObservable();
   userData: any; // Save logged in user data
   constructor(
     public afs: AngularFirestore, // Inject Firestore service
@@ -31,9 +34,18 @@ export class AuthService {
       }
     });
   }
+
+  show() {
+    this.isLoading.next(true);
+  }
+
+  hide() {
+    this.isLoading.next(false);
+  }
   // Sign in with email/password
   SignIn(email: string, password: string) {
     setTimeout(() => {
+      this.isLoading.next(false);
       return this.afAuth
         .signInWithEmailAndPassword(email, password)
         .then((result) => {
@@ -52,6 +64,7 @@ export class AuthService {
   // Sign up with email/password
   SignUp(email: string, password: string) {
     setTimeout(() => {
+      this.isLoading.next(false);
       return this.afAuth
         .createUserWithEmailAndPassword(email, password)
         .then((result) => {
@@ -76,6 +89,7 @@ export class AuthService {
   // Reset Forggot password
   ForgotPassword(passwordResetEmail: string) {
     setTimeout(() => {
+      this.isLoading.next(false);
       return this.afAuth
         .sendPasswordResetEmail(passwordResetEmail)
         .then(() => {

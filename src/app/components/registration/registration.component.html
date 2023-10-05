@@ -20,7 +20,7 @@
         color="primary"
         (click)="
           [
-            (isLoading = true),
+            authService.show(),
             authService.SignUp(userEmail.value, userPwd.value)
           ]
         "
@@ -34,6 +34,9 @@
         <span class="redirect" routerLink="/login">Log In</span></span
       >
     </mat-card-footer>
-    <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+    <mat-progress-bar
+      *ngIf="authService.isLoading$ | async"
+      mode="indeterminate"
+    ></mat-progress-bar>
   </mat-card>
 </div>

@@ -27,3 +27,9 @@
   background-color: #989898;
   color: #ffffff !important;
 }
+
+@media (max-width: 860px) {
+  mat-button-toggle span {
+    display: none;
+  }
+}

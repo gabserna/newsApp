@@ -58,7 +58,12 @@ export class AuthService {
         this.SetUserData(result.user);
       })
       .catch((error) => {
-        window.alert(error.message);
+        if (error.code === 'auth/email-already-in-use') {
+          window.alert(error.message);
+          console.log('This email is already registered.');
+        } else {
+          console.error(error);
+        }
       });
   }
   // Send email verfificaiton when new user sign up

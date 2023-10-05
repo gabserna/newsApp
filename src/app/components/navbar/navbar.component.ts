@@ -14,15 +14,15 @@ export class NavbarComponent {
     this.windowInnerWidth = window.innerWidth;
   }
 
-  categories = [
-    { name: 'General', icon: 'description' },
-    { name: 'Business', icon: 'add_business' },
-    { name: 'Entertainment', icon: 'theater_comedy' },
-    { name: 'Health', icon: 'health_and_safety' },
-    { name: 'Science', icon: 'biotech' },
-    { name: 'Sports', icon: 'sports_football' },
-    { name: 'Technology', icon: 'important_devices' },
-  ];
+  // categories = [
+  //   { name: 'General', icon: 'description' },
+  //   { name: 'Business', icon: 'add_business' },
+  //   { name: 'Entertainment', icon: 'theater_comedy' },
+  //   { name: 'Health', icon: 'health_and_safety' },
+  //   { name: 'Science', icon: 'biotech' },
+  //   { name: 'Sports', icon: 'sports_football' },
+  //   { name: 'Technology', icon: 'important_devices' },
+  // ];
 
   selectedCategory: string = 'general';
   @Output() categoryChanged = new EventEmitter<string>();

@@ -45,6 +45,7 @@ mat-card-header {
   padding: 5px 10px;
   text-decoration: none;
   border: none;
+  color: #d1d7dc !important;
 }
 
 a {
@@ -52,4 +53,16 @@ a {
 }
 .cardButton:hover {
   background-color: #d90429;
+}
+
+.searchInput {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid red; */
+  margin: 0 auto;
+  width: 40%;
+}
+.goBackButton {
+  margin: 0 auto;
+  width: 40%;
 }

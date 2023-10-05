@@ -7,10 +7,7 @@
       name="fontStyle"
       aria-label="Font Style"
     >
-      <mat-button-toggle
-        *ngFor="let category of categories"
-        [value]="category.name"
-      >
+      <mat-button-toggle *ngFor="let category of categories" [value]="category.name">
         <mat-icon>{{ category.icon }}</mat-icon>
         <span>{{ category.name }}</span>
       </mat-button-toggle>

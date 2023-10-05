@@ -25,3 +25,7 @@ button {
 span {
   text-align: center;
 }
+
+.redirect {
+  cursor: pointer;
+}

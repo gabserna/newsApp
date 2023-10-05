@@ -1,11 +1,21 @@
-<h2>Search by keyword</h2>
-<mat-form-field appearance="outline">
+<div class="searchInput">
+
+  <h2>Search by keyword</h2>
+  <mat-form-field appearance="outline">
   <mat-label>Type a keyword to find</mat-label>
   <!-- <input matInput (input)="onFilterChange($event.target?.value)" placeholder="Search"> -->
   <input matInput (input)="onFilterChange($event)" />
   <mat-icon matSuffix>search</mat-icon>
-    <mat-hint>can use AND / OR / NOT keywords</mat-hint>
+  <mat-hint>can use AND / OR / NOT keywords</mat-hint>
 </mat-form-field>
+<br>
+<button mat-button (click)="goBackToTopHeadlines()" class="cardButton goBackButton">
+  <mat-icon aria-hidden="false" aria-label="icon">arrow_back</mat-icon>
+  <span>Go Back</span>
+</button>
+</div>
+
+
 <mat-divider></mat-divider>
 
 <div class="news-list">
@@ -14,7 +24,7 @@
       <h3>Your Search Results</h3> 
         <mat-card-header>
             <mat-card-title>{{ article.title }}</mat-card-title>
-    </mat-card-header>
+          </mat-card-header>
 
     <mat-card-content id="actions">
     <mat-card-actions>
@@ -22,7 +32,7 @@
             <mat-icon aria-hidden="false" aria-label="icon" fontIcon="launch"></mat-icon>
             Open
         </a>
-    </mat-card-actions>
+      </mat-card-actions>
 
     <mat-card-actions>
         <a mat-button [href]="" target="_blank" class="cardButton">

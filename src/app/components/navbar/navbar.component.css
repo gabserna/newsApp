@@ -19,3 +19,7 @@
     background-color: #989898;
     color: #ffffff !important;
 }
+
+.material-symbols-outlined, #logout {
+    cursor: pointer;
+}

@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NewsService } from "../../services/news.service";
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-search',
@@ -11,7 +13,7 @@ export class SearchComponent implements OnInit {
   @Input() searchFilter = '';
   headlines: any;
 
-  constructor(private newsService: NewsService) {}
+  constructor(private newsService: NewsService, private router: Router) {}
 
   ngOnInit(): void {
     this.getSearchResults();
@@ -37,4 +39,9 @@ export class SearchComponent implements OnInit {
     this.searchFilter = filter;
     this.getSearchResults();
   }
+
+  goBackToTopHeadlines() {
+    this.router.navigate(['/top-headlines']);
+  }
+  
 }

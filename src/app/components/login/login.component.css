@@ -25,11 +25,16 @@ button {
 span {
   padding: 0.5em;
   text-align: center;
-  display: block;
+  /* display: block; */
+}
+
+mat-card-footer {
+  display: flex;
+  flex-direction: column;
 }
 
 .forgotPassword {
-  display: block;
+  display: inline-block;
   text-align: center;
   color: #4dd5fe;
   font-size: 14px;
@@ -37,7 +42,7 @@ span {
 }
 
 .SignUp {
-  display: block;
+  display: inline-block;
   text-align: center;
   color: #4dd5fe;
   font-size: 14px;

@@ -33,33 +33,37 @@ export class AuthService {
   }
   // Sign in with email/password
   SignIn(email: string, password: string) {
-    return this.afAuth
-      .signInWithEmailAndPassword(email, password)
-      .then((result) => {
-        this.SetUserData(result.user);
-        this.afAuth.authState.subscribe((user) => {
-          if (user) {
-            this.router.navigate(['top-headlines']);
-          }
+    setTimeout(() => {
+      return this.afAuth
+        .signInWithEmailAndPassword(email, password)
+        .then((result) => {
+          this.SetUserData(result.user);
+          this.afAuth.authState.subscribe((user) => {
+            if (user) {
+              this.router.navigate(['top-headlines']);
+            }
+          });
+        })
+        .catch((error) => {
+          window.alert(error.message);
         });
-      })
-      .catch((error) => {
-        window.alert(error.message);
-      });
+    }, 2000);
   }
   // Sign up with email/password
   SignUp(email: string, password: string) {
-    return this.afAuth
-      .createUserWithEmailAndPassword(email, password)
-      .then((result) => {
-        /* Call the SendVerificaitonMail() function when new user sign 
-        up and returns promise */
-        this.SendVerificationMail();
-        this.SetUserData(result.user);
-      })
-      .catch((error) => {
-        window.alert(error.message);
-      });
+    setTimeout(() => {
+      return this.afAuth
+        .createUserWithEmailAndPassword(email, password)
+        .then((result) => {
+          /* Call the SendVerificaitonMail() function when new user sign 
+          up and returns promise */
+          this.SendVerificationMail();
+          this.SetUserData(result.user);
+        })
+        .catch((error) => {
+          window.alert(error.message);
+        });
+    }, 2000);
   }
   // Send email verfificaiton when new user sign up
   SendVerificationMail() {
@@ -71,14 +75,16 @@ export class AuthService {
   }
   // Reset Forggot password
   ForgotPassword(passwordResetEmail: string) {
-    return this.afAuth
-      .sendPasswordResetEmail(passwordResetEmail)
-      .then(() => {
-        window.alert('Password reset email sent, check your inbox.');
-      })
-      .catch((error) => {
-        window.alert(error);
-      });
+    setTimeout(() => {
+      return this.afAuth
+        .sendPasswordResetEmail(passwordResetEmail)
+        .then(() => {
+          window.alert('Password reset email sent, check your inbox.');
+        })
+        .catch((error) => {
+          window.alert(error);
+        });
+    }, 2000);
   }
   // Returns true when user is looged in and email is verified
   get isLoggedIn(): boolean {

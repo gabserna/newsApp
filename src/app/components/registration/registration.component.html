@@ -16,8 +16,14 @@
     </mat-card-content>
     <mat-card-actions>
       <button
-        mat-button
-        (click)="authService.SignUp(userEmail.value, userPwd.value)"
+        mat-raised-button
+        color="primary"
+        (click)="
+          [
+            (isLoading = true),
+            authService.SignUp(userEmail.value, userPwd.value)
+          ]
+        "
       >
         Sign Up
       </button>
@@ -28,5 +34,6 @@
         <span class="redirect" routerLink="/login">Log In</span></span
       >
     </mat-card-footer>
+    <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
   </mat-card>
 </div>

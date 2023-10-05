@@ -7,6 +7,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./forgot-password.component.css'],
 })
 export class ForgotPasswordComponent implements OnInit {
+  isLoading = false;
   constructor(public authService: AuthService) {}
   ngOnInit() {}
 }

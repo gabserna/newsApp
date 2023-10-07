@@ -24,9 +24,25 @@ h2 {
   width: 90%;
 }
 
+.news-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 mat-card {
+  width: 20em;
+  height: 30rem;
+  overflow: hidden;
   margin: 10px;
+  padding: 10px;
   background-color: #d1d7dc;
+  flex: 0 0 calc(33.333% - 20px);
+  margin-bottom: 20px;
+}
+
+#snapshotImg {
+  width: 100%;
 }
 
 #actions {
@@ -43,9 +59,15 @@ mat-card {
   border: none;
 }
 
-a {
+/* a {
     color: white !important;
+} */
+#subtitler {
+    color: #000 !important;
+    font-weight: bolder;
+    /* text-decoration: none; */
 }
+
 .cardButton:hover {
   background-color: #d90429;
 }

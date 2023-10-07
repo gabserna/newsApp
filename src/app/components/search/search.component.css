@@ -9,6 +9,10 @@ h2, h3 {
   margin: 0;
 }
 
+#searchTitler {
+  margin: 0 auto;
+}
+
 .h1Headlines {
   background-color: #0a3161;
   font-size: 2.5vw;
@@ -21,11 +25,20 @@ h2, h3 {
 .news-list {
   margin: 0 auto;
   width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 mat-card {
+  width: 15em;
+  height: 20rem;
+  overflow: hidden;
   margin: 10px;
+  padding: 10px;
   background-color: #d1d7dc;
+  flex: 0 0 calc(25% - 20px);
+  margin-bottom: 20px;
 }
 
 mat-card-header {
@@ -41,6 +54,7 @@ mat-card-header {
 }
 
 .cardButton {
+  margin: 0 auto;
   background-color: #003566;
   padding: 5px 10px;
   text-decoration: none;
@@ -48,8 +62,14 @@ mat-card-header {
   color: #d1d7dc !important;
 }
 
-a {
+/* a {
     color: white !important;
+} */
+
+#subtitler {
+  color: #000 !important;
+  font-weight: bolder;
+  /* text-decoration: none; */
 }
 .cardButton:hover {
   background-color: #d90429;

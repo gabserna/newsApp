@@ -8,7 +8,7 @@ import { Subject, throwError } from 'rxjs';
   providedIn: 'root',
 })
 export class NewsService {
-  private apiKey = environment.newsApiFive.apiKey;
+  private apiKey = environment.newsApi.apiKey;
   private selectedCategory = new Subject<string>();
 
   selectedCategory$ = this.selectedCategory.asObservable();

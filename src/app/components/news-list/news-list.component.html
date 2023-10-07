@@ -13,12 +13,14 @@
       />
       <mat-card-header>
         <mat-card-title
-          ><h3>
+          >
+          
+          <h3>
             <a id="subtitler" target="_blank" href="{{ article.url }}">{{ article.title }}</a>
           </h3>
           <p>{{ article.description }}</p>
           <p>
-            <em>{{ article.publishedAt }}</em>
+            <em>{{ truncatedText(article.publishedAt) }}</em>
           </p></mat-card-title
         >
       </mat-card-header>
@@ -27,17 +29,6 @@
       </mat-card-content>
 
       <mat-card-content id="actions">
-        <!-- <mat-card-actions>
-          <a mat-button [href]="article.url" target="_blank" class="cardButton">
-            <mat-icon
-              aria-hidden="false"
-              aria-label="icon"
-              fontIcon="launch"
-            ></mat-icon>
-            Open
-          </a>
-        </mat-card-actions> -->
-
         <mat-card-actions>
           <a mat-button [href]="" target="_blank" class="cardButton">
             <mat-icon

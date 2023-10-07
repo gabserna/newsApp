@@ -30,17 +30,6 @@ export class NewsListComponent implements OnInit {
     })
   }
 
-  // ngOnChanges() {
-  //   var category = ''
-  //   this.selectedCategory$.subscribe(cat => {
-  //     this.getNews(cat)
-
-  // })
-  //   // this.getNews(category);
-  //   console.log(this.selectedCategory);
-    
-  // }
-
   getNews(category: string) {
     this.newsService.getTopHeadlines(category).subscribe((data: any) => {
       this.headlines = data.articles;
@@ -53,5 +42,14 @@ export class NewsListComponent implements OnInit {
     this.selectedCategory = event;
     this.getNews(this.selectedCategory);
   }
+
+  truncatedText(title: string): string {
+    if (title.length > 60) {
+      return title.substring(0, 60) + '...';
+    } else {
+      return title;
+    }
+  }
+  
 }
 

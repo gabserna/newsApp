@@ -19,21 +19,6 @@ export class SearchComponent implements OnInit {
     this.getSearchResults();
   }
 
-  // getSearchResults() {
-  //   this.newsService
-  //     .searchArticles(this.searchFilter)
-  //     .subscribe((data: any) => {
-  //       this.headlines = data.articles;
-  //       console.log(this.headlines);
-  //       this.searchResults = this.headlines.map((article: any) => {
-  //         return {
-  //           title: article.title,
-  //           url: article.url
-  //         };
-  //       });
-  //     });
-  // }
-
   getSearchResults() {
     if (this.searchFilter.trim() !== '') {
       this.newsService.searchArticles(this.searchFilter).subscribe(
@@ -63,4 +48,13 @@ export class SearchComponent implements OnInit {
   goBackToTopHeadlines() {
     this.router.navigate(['top-headlines']);
   }
+
+  truncatedText(title: string): string {
+    if (title.length > 60) {
+      return title.substring(0, 60) + '...';
+    } else {
+      return title;
+    }
+  }
+
 }

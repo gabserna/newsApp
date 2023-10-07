@@ -9,17 +9,8 @@ h2, h3 {
   margin: 0;
 }
 
-#searchTitler {
+h3 #searchTitler {
   margin: 0 auto;
-}
-
-.h1Headlines {
-  background-color: #0a3161;
-  font-size: 2.5vw;
-}
-
-.h2Headlines {
-  background-color: #d90429;
 }
 
 .news-list {
@@ -32,7 +23,7 @@ h2, h3 {
 
 mat-card {
   width: 15em;
-  height: 20rem;
+  height: 12rem;
   overflow: hidden;
   margin: 10px;
   padding: 10px;
@@ -46,11 +37,17 @@ mat-card-header {
   flex-direction: column;
 }
 
-#actions {
+mat-card-content {
   display: flex;
   justify-content: space-between;
   margin: 0;
   padding: 0;
+}
+
+mat-icon {
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
 }
 
 .cardButton {

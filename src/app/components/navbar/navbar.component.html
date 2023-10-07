@@ -1,26 +1,13 @@
-<mat-toolbar color="primary" *ngIf="isAuthenticated">
+<mat-toolbar *ngIf="isAuthenticated">
   <mat-toolbar-row>
-    <img src="./assets/news_logo.png" alt="logo" width="100" />
+    
 
     <mat-divider [vertical]="true"></mat-divider>
 
-    <mat-button-toggle-group
-      [(ngModel)]="selectedCategory"
-      (change)="onCategoryChange($event)"
-      appearance="legacy"
-      name="fontStyle"
-      aria-label="Font Style"
-    >
-      <mat-button-toggle
-        *ngFor="let category of categories"
-        [value]="category.name"
-        (click)="newsService.show(category.name)"
-      >
-        <mat-icon>{{ category.icon }}</mat-icon>
-        <span>{{ category.name }}</span>
-      </mat-button-toggle>
-    </mat-button-toggle-group>
+    <h1>InfoHub News</h1>
+    <h4>Bringing the World to Your Screen</h4>
 
+    
     <span
       *ngIf="authService.isLoggedIn"
       class="material-symbols-outlined"
@@ -32,7 +19,7 @@
         fontIcon="logout"
         id="logout"
       ></mat-icon>
-      logout
     </span>
+
   </mat-toolbar-row>
 </mat-toolbar>

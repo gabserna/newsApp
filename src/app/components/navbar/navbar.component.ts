@@ -10,7 +10,7 @@ import { NewsService } from 'src/app/services/news.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
 })
-export class NavbarComponent implements OnInit {
+export class NavbarComponent {
   isAuthenticated: boolean = false;
   windowInnerWidth: number;
 

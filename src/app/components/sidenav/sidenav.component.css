@@ -43,3 +43,16 @@ mat-button-toggle:hover {
   padding: 0;
   height: auto;
 }
+
+.api, p, a, img {
+  font-size: 10px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+
+@media (max-width: 860px) {
+  mat-button-toggle span {
+    display: none;
+  }
+}

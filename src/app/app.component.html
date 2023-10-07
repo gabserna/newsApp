@@ -1,8 +1,13 @@
 <div class="container">
   <app-navbar
-    (categoryChanged)="onCategoryChanged($event)"
-    *ngIf="!isLoginPage"
+    
   ></app-navbar>
-  <app-sidenav></app-sidenav>
+
+
+  <app-sidenav
+  (categoryChanged)="onCategoryChanged($event)"
+    *ngIf="!isLoginPage"
+  ></app-sidenav>
+
   <router-outlet></router-outlet>
 </div>

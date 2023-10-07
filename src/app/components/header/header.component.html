@@ -1,4 +1,22 @@
-<div class="theHeader">
-    <h1>InfoHub News: <small>Bringing the World to Your Screen</small></h1>
+<div class="header">
+  <div class="clock">
+    <p>
+      {{ currentDay }}
+      {{ currentTime | date : "HH:mm:ss" }} MST,
+      {{ currentDate | date : "MM-dd-yyyy" }}
+    </p>
+  </div>
+
+  <div class="api">
+    <p>
+      Powered by:
+      <a href="https://newsapi.org/" target="_blank">
+        <img src="./assets/news_logo.png" alt="logo" width="50" />
+      </a>
+    </p>
+  </div>
 </div>
 
+<div class="theHeader">
+  <h1>InfoHub News: <small>Bringing the World to Your Screen</small></h1>
+</div>

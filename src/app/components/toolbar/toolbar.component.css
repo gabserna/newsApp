@@ -25,6 +25,7 @@ mat-button-toggle:hover {
 .mat-toolbar-single-row {
   padding: 0;
   height: auto;
+    padding: 0 2rem;
 }
 
 .api, p, a, img {

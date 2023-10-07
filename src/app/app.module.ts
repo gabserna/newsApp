@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { NewsListComponent } from './components/news-list/news-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { NewsService } from './services/news.service';
 import { MaterialModule } from './modules/material.module';
@@ -33,45 +32,46 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NewsListComponent,
-    NavbarComponent,
-    LoginComponent,
-    RegistrationComponent,
-    ForgotPasswordComponent,
-    VerifyEmailComponent,
-    SearchComponent,
-    SidenavComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    MaterialModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    AngularFireAuthModule,
-    AngularFireStorageModule,
-    AngularFireDatabaseModule,
-    MatIconModule,
-    ReactiveFormsModule,
-    MatInputModule,
-    MatButtonModule,
-    MatIconModule,
-    MatFormFieldModule,
-    MatButtonModule,
-    MatToolbarModule,
-    MatSidenavModule,
-    MatListModule,
-    MatDividerModule,
-    MatSlideToggleModule
-  ],
-  providers: [AuthService, NewsService, CategoryService],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        NewsListComponent,
+        LoginComponent,
+        RegistrationComponent,
+        ForgotPasswordComponent,
+        VerifyEmailComponent,
+        SearchComponent,
+        SidenavComponent,
+        ToolbarComponent,
+    ],
+    providers: [AuthService, NewsService, CategoryService],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        MaterialModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule,
+        AngularFireAuthModule,
+        AngularFireStorageModule,
+        AngularFireDatabaseModule,
+        MatIconModule,
+        ReactiveFormsModule,
+        MatInputModule,
+        MatButtonModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatToolbarModule,
+        MatSidenavModule,
+        MatListModule,
+        MatDividerModule,
+        MatSlideToggleModule
+    ]
 })
 export class AppModule {}

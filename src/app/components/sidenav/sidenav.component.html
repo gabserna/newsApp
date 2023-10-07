@@ -1,0 +1,41 @@
+<mat-drawer-container>
+  <mat-drawer mode="side" opened>
+    <h1>CATEGORIES</h1>
+    <mat-toolbar>
+      <mat-button-toggle-group
+        [(ngModel)]="selectedCategory"
+        (change)="onCategoryChange($event)"
+      >
+        <mat-button-toggle
+          *ngFor="let category of categories"
+          [value]="category.name"
+          (click)="newsService.show(category.name)"
+        >
+          <mat-icon>{{ category.icon }}</mat-icon>
+          <span>{{ category.name }}</span>
+        </mat-button-toggle>
+
+        <mat-button-toggle>
+          <span
+            *ngIf="authService.isLoggedIn"
+            class="material-symbols-outlined"
+            (click)="authService.SignOut()"
+          >
+            <mat-icon
+              aria-hidden="false"
+              aria-label="Example home icon"
+              fontIcon="logout"
+              id="logout"
+            ></mat-icon>
+            logout</span
+          >
+        </mat-button-toggle>
+
+      </mat-button-toggle-group>
+    </mat-toolbar>
+  </mat-drawer>
+
+  <mat-drawer-content>
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>

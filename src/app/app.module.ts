@@ -23,6 +23,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { SearchComponent } from './components/search/search.component';
 import { CategoryService } from './services/categories.service';
 import { AuthService } from './services/auth.service';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [
@@ -34,6 +44,7 @@ import { AuthService } from './services/auth.service';
     ForgotPasswordComponent,
     VerifyEmailComponent,
     SearchComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +59,17 @@ import { AuthService } from './services/auth.service';
     AngularFireStorageModule,
     AngularFireDatabaseModule,
     MatIconModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatDividerModule,
+    MatSlideToggleModule
   ],
   providers: [AuthService, NewsService, CategoryService],
   bootstrap: [AppComponent],

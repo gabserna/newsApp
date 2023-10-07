@@ -1,22 +1,38 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" *ngIf="isAuthenticated">
   <mat-toolbar-row>
     <img src="./assets/news_logo.png" alt="logo" width="100" />
-    <span *ngIf="windowInnerWidth > 768">News Categories</span>
+    <!-- <span *ngIf="windowInnerWidth > 768">News Categories</span> -->
     <mat-divider [vertical]="true"></mat-divider>
+
     <mat-button-toggle-group
-      [(ngModel)]="selectedCategory"
-      (change)="onCategoryChange($event)"
-      appearance="legacy"
-      name="fontStyle"
-      aria-label="Font Style"
-    >
-      <mat-button-toggle
-        *ngFor="let category of categories"
-        [value]="category.name"
-      >
-        <mat-icon *ngIf="windowInnerWidth <= 768">{{ category.icon }}</mat-icon>
-        <span *ngIf="windowInnerWidth > 768">{{ category.name }}</span>
-      </mat-button-toggle>
-    </mat-button-toggle-group>
-  </mat-toolbar-row>
+    [(ngModel)]="selectedCategory"
+    (change)="onCategoryChange($event)"
+    appearance="legacy"
+    name="fontStyle"
+    aria-label="Font Style"
+  >
+    <mat-button-toggle *ngFor="let category of categories" [value]="category.name" (click)="newsService.show(category.name)">
+      <mat-icon>{{ category.icon }}</mat-icon>
+      <span>{{ category.name }}</span>
+    </mat-button-toggle>
+
+  </mat-button-toggle-group>
+
+  
+  <span
+  *ngIf="authService.isLoggedIn"
+  class="material-symbols-outlined"
+  (click)="authService.SignOut()"
+  >
+  <mat-icon
+  aria-hidden="false"
+  aria-label="Example home icon"
+  fontIcon="logout"
+  id="logout"
+  ></mat-icon>
+  logout
+</span>
+</mat-toolbar-row>
 </mat-toolbar>
+
+

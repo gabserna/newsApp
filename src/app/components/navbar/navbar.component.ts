@@ -1,27 +1,30 @@
-import { Component, EventEmitter, Output, HostListener } from '@angular/core';
+import { Component, EventEmitter, Output, OnInit, HostListener } from '@angular/core';
 import { MatButtonToggleChange } from '@angular/material/button-toggle';
+import { AuthService } from 'src/app/services/auth.service';
+import { Router } from '@angular/router';
+import { CategoryService } from 'src/app/services/categories.service';
+import { NewsService } from 'src/app/services/news.service';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  styleUrls: ['./navbar.component.css'],
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit {
+  isAuthenticated: boolean = false;
   windowInnerWidth: number;
 
-  constructor() {
+  categories = this.categoryService.categories;
+  showSearchComponent: boolean = false;
+  newsListComponent: boolean = false;
+
+  constructor(
+    private router: Router, 
+    public authService: AuthService, 
+    private categoryService: CategoryService,
+    public newsService: NewsService) {
     this.windowInnerWidth = window.innerWidth;
   }
-
-  categories = [
-    { name: 'General', icon: 'description' },
-    { name: 'Business', icon: 'add_business' },
-    { name: 'Entertainment', icon: 'theater_comedy' },
-    { name: 'Health', icon: 'health_and_safety' },
-    { name: 'Science', icon: 'biotech' },
-    { name: 'Sports', icon: 'sports_football' },
-    { name: 'Technology', icon: 'important_devices' },
-  ];
 
   selectedCategory: string = 'general';
   @Output() categoryChanged = new EventEmitter<string>();
@@ -34,5 +37,18 @@ export class NavbarComponent {
   onCategoryChange(event: MatButtonToggleChange) {
     this.selectedCategory = event.value;
     this.categoryChanged.emit(this.selectedCategory);
+  
+    if (event.value === 'Search') {
+      this.router.navigate(['search']);
+    } else if (event.value === 'Start') {
+      this.router.navigate(['top-headlines']);
+    }
   }
+
+  ngOnInit(): void {
+    this.authService.isAuthenticated().subscribe((authenticated) => {
+      this.isAuthenticated = authenticated;
+    });
+  }
+
 }

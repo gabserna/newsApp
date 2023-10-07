@@ -1,21 +1,31 @@
-
-    
-.mat-toolbar-row, .mat-toolbar-single-row {
-    justify-content: space-between;
+.mat-toolbar-row,
+.mat-toolbar-single-row {
+  /* display: flex; */
+  justify-content: space-between;
 }
 
-
-.mat-button-toggle{
-    background-color: white;
-    color: #000;
+.mat-button-toggle {
+  background-color: white;
+  color: #000;
 }
 
 .mat-button-toggle:hover {
-    background-color: transparent;
-    /* color: #909090 !important;     */
+  background-color: transparent;
+  /* color: #909090 !important;     */
 }
 
 .mat-button-toggle-checked {
     background-color: #989898;
     color: #ffffff !important;
+}
+
+.material-symbols-outlined, #logout {
+    cursor: pointer;
+}
+
+
+@media (max-width: 860px) {
+  mat-button-toggle span {
+    display: none;
+  }
 }

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-registration',
-  templateUrl: './registration.component.html',
-  styleUrls: ['./registration.component.css'],
+  selector: 'app-forgot-password',
+  templateUrl: './forgot-password.component.html',
+  styleUrls: ['./forgot-password.component.css'],
 })
-export class RegistrationComponent implements OnInit {
+export class ForgotPasswordComponent implements OnInit {
   isLoading = false;
   constructor(public authService: AuthService) {}
   ngOnInit() {}

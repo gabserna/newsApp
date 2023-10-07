@@ -11,11 +11,18 @@ import { NewsService } from './services/news.service';
 import { MaterialModule } from './modules/material.module';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
-import { SearchComponent } from './components/search/search.component';
 import { environment } from '../environments/environment';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
+import { MatIconModule } from '@angular/material/icon';
+import { SearchComponent } from './components/search/search.component';
+import { CategoryService } from './services/categories.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +31,9 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     NavbarComponent,
     LoginComponent,
     RegistrationComponent,
-    SearchComponent
+    ForgotPasswordComponent,
+    VerifyEmailComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
@@ -35,9 +44,12 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     MaterialModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    AngularFireStorageModule,
+    AngularFireDatabaseModule,
+    MatIconModule,
   ],
-  providers: [NewsService],
+  providers: [AuthService, NewsService, CategoryService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -3,11 +3,7 @@
     <h1 class="h1Headlines">Top Headlines</h1>
     <h2 class="h2Headlines">{{ selectedCategory }}</h2>
   </mat-card-title>
-  
 
-  <div class="category-selector">
-  </div>
-  
   <div class="news-items">
     <mat-card *ngFor="let article of headlines" class="news-item">
       <mat-card-header>
@@ -25,7 +21,8 @@
               aria-label="icon"
               fontIcon="launch"
             ></mat-icon>
-            Open</a>
+            Open
+          </a>
         </mat-card-actions>
 
         <mat-card-actions>
@@ -38,7 +35,6 @@
             Like
           </a>
         </mat-card-actions>
-
       </mat-card-content>
     </mat-card>
     <mat-divider></mat-divider>

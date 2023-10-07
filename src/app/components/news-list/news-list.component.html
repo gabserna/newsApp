@@ -1,32 +1,34 @@
 <div class="news-list">
   <mat-card-title id="topHeadlinesTitle">
-    <h1 class="h1Headlines">Top Headlines</h1>
-    <h2 class="h2Headlines">{{ selectedCategory }}</h2>
+    <h1 class="h1Headlines">Top Headlines: <small>{{ selectedCategory }}</small></h1>
+    <h2 class="h2Headlines"></h2>
   </mat-card-title>
 
   <div class="news-items">
     <mat-card *ngFor="let article of headlines" class="news-item">
-      <img
-        src="{{ article.urlToImage ? article.urlToImage : defaultImage }}"
-        alt="snapshot"
-        id="snapshotImg"
-      />
+      <a href="{{ article.url }}" target="_blank">
+        <img
+          src="{{ article.urlToImage ? article.urlToImage : defaultImage }}"
+          alt="snapshot"
+          id="snapshotImg"
+        />
+      </a>
       <mat-card-header>
         <mat-card-title
           >
           
           <h3>
-            <a id="subtitler" target="_blank" href="{{ article.url }}">{{ article.title }}</a>
+            <!-- target="_blank" href="{{ article.url }}" -->
+            <a id="subtitler">{{ article.title }}</a>
           </h3>
-          <p>{{ article.description }}</p>
-          <p>
-            <em>{{ truncatedText(article.publishedAt) }}</em>
-          </p></mat-card-title
-        >
+          <p id="articleDescription">{{ truncatedText(article.description) }}</p>
+          <p id="articlePublished">
+            <em>{{ article.publishedAt }}</em>
+          </p></mat-card-title>
       </mat-card-header>
-      <mat-card-content>
+      <!-- <mat-card-content>
         <p>{{ article.description }}</p>
-      </mat-card-content>
+      </mat-card-content> -->
 
       <mat-card-content id="actions">
         <mat-card-actions>

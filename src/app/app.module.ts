@@ -22,7 +22,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { SearchComponent } from './components/search/search.component';
 import { CategoryService } from './services/categories.service';
 import { AuthService } from './services/auth.service';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -33,6 +32,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
     declarations: [
@@ -43,8 +43,8 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
         ForgotPasswordComponent,
         VerifyEmailComponent,
         SearchComponent,
-        SidenavComponent,
         ToolbarComponent,
+        HeaderComponent,
     ],
     providers: [AuthService, NewsService, CategoryService],
     bootstrap: [AppComponent],

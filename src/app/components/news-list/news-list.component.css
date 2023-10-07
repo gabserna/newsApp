@@ -1,4 +1,3 @@
-
 h1,
 h2 {
   margin-top: 1rem;
@@ -35,12 +34,12 @@ h2 {
 
 mat-card {
   width: 20em;
-  height: 30rem;
+  height: 25rem;
   overflow: hidden;
   margin: 10px;
   padding: 10px;
   background-color: #d1d7dc;
-  flex: 0 0 calc(33.333% - 20px);
+  flex: 0 0 calc(20% - 20px);
   margin-bottom: 20px;
 }
 
@@ -66,11 +65,21 @@ mat-card {
     color: white !important;
 } */
 #subtitler {
-    color: #000 !important;
-    font-weight: bolder;
-    /* text-decoration: none; */
+  color: #000 !important;
+  font-weight: bolder;
+  /* text-decoration: none; */
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
 }
 
 .cardButton:hover {
   background-color: #d90429;
+}
+
+#articleDescription,
+#articlePublished {
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
 }

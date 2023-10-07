@@ -1,11 +1,11 @@
 <div class="container">
-  <app-toolbar></app-toolbar>
+  <!-- <app-toolbar></app-toolbar> -->
+  <app-header></app-header>
 
-
-  <app-sidenav
+  <app-toolbar
   (categoryChanged)="onCategoryChanged($event)"
     *ngIf="!isLoginPage"
-  ></app-sidenav>
+  ></app-toolbar>
 
   <router-outlet></router-outlet>
 </div>

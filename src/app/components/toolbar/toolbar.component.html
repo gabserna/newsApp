@@ -1,51 +1,20 @@
-  <p>
-    <mat-toolbar color="primary">
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <h1>InfoHub News: </h1>
-    <span>Bringing the World to Your Screen</span>
+<mat-toolbar>
+  <mat-button-toggle-group [(ngModel)]="selectedCategory" (change)="onCategoryChange($event)">
+    <mat-button-toggle *ngFor="let category of categories" [value]="category.name" (click)="newsService.show(category.name)">
+      <!-- <mat-icon>{{ category.icon }}</mat-icon> -->
+      <span>{{ category.name }}</span>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
 
-      <span class="example-spacer"></span>
-      
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-      
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-      </button>
+  <span *ngIf="authService.isLoggedIn" class="material-symbols-outlined" (click)="authService.SignOut()">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="logout" id="logout"></mat-icon>
+    logout
+  </span>
 
-    </mat-toolbar>
-  </p>
-
-
-
-
-
-
-  <!--   
-  <mat-toolbar *ngIf="isAuthenticated">
-    <mat-toolbar-row>
-      
-  
-      <mat-divider [vertical]="true"></mat-divider>
-  
-      
-      
-      <span
-        *ngIf="authService.isLoggedIn"
-        class="material-symbols-outlined"
-        (click)="authService.SignOut()"
-      >
-        <mat-icon
-          aria-hidden="false"
-          aria-label="Example home icon"
-          fontIcon="logout"
-          id="logout"
-        ></mat-icon>
-      </span>
-  
-    </mat-toolbar-row>
-  </mat-toolbar>
-   -->
+  <!-- <div class="api">
+    <p>Powered by:</p>
+    <a href="https://newsapi.org/" target="_blank">
+      <img src="./assets/news_logo.png" alt="logo" width="100" />
+    </a>
+  </div> -->
+</mat-toolbar>

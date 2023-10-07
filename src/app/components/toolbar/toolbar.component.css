@@ -1,4 +1,41 @@
-.example-spacer {
-    flex: 1 1 auto;
+h1 {
+  font-weight: bolder;
+  text-align: center;
+  margin: 5px;
+}
+
+mat-button-toggle-group {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+mat-button-toggle:hover {
+  background-color: #ced4da !important;
+}
+
+.material-symbols-outlined {
+  margin-top: 10px;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.mat-toolbar-single-row {
+  padding: 0;
+  height: auto;
+}
+
+.api, p, a, img {
+  font-size: 10px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+
+/* @media (max-width: 860px) {
+  mat-button-toggle span {
+    display: none;
   }
-  
+} */

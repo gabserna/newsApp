@@ -1,46 +1,40 @@
 <div class="news-list">
   <mat-card-title id="topHeadlinesTitle">
     <h1 class="h1Headlines">Top Headlines: <small>{{ selectedCategory }}</small></h1>
-    <h2 class="h2Headlines"></h2>
+    <mat-divider class="custom-divider"></mat-divider>
   </mat-card-title>
 
   <div class="news-items">
     <mat-card *ngFor="let article of headlines" class="news-item">
       <a href="{{ article.url }}" target="_blank">
-        <img
-          src="{{ article.urlToImage ? article.urlToImage : defaultImage }}"
-          alt="snapshot"
-          id="snapshotImg"
-        />
-      </a>
-      <mat-card-header>
-        <mat-card-title
-          >
-          
-          <h3>
-            <!-- target="_blank" href="{{ article.url }}" -->
-            <a id="subtitler">{{ article.title }}</a>
-          </h3>
-          <p id="articleDescription">{{ truncatedText(article.description) }}</p>
-          <p id="articlePublished">
-            <em>{{ article.publishedAt }}</em>
-          </p></mat-card-title>
-      </mat-card-header>
-      <!-- <mat-card-content>
-        <p>{{ article.description }}</p>
-      </mat-card-content> -->
-
-      <mat-card-content id="actions">
-        <mat-card-actions>
-          <a mat-button [href]="" target="_blank" class="cardButton">
+        <div class="image-container">
+          <img
+            src="{{ article.urlToImage ? article.urlToImage : defaultImage }}"
+            alt="img"
+            id="snapshotImg"
+          />
+          <a [href]="" target="_blank" class="like">
             <mat-icon
+            style="font-size: 20px;"
               aria-hidden="false"
               aria-label="icon"
-              fontIcon="thumb_up"
+              fontIcon="favorite"
             ></mat-icon>
           </a>
-        </mat-card-actions>
-      </mat-card-content>
+        </div>
+      </a>
+      <mat-card-header>
+        <mat-card-title>
+          <h3>
+            <a id="subtitler">{{ article.title }}</a>
+          </h3>
+          <!-- <p id="articleDescription">{{ truncatedText(article.description) }}</p> -->
+          <p id="articlePublished">
+            <em>{{ article.publishedAt }}</em>
+          </p>
+        </mat-card-title>
+      </mat-card-header>
+
     </mat-card>
     <mat-divider></mat-divider>
   </div>

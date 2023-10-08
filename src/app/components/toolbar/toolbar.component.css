@@ -1,16 +1,22 @@
-mat-button-toggle-group {
+mat-toolbar {
+  font-size: 15px !important;
+  padding: 0;
   display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+  border: none;
+}
+
+mat-button-toggle-group {
   flex-direction: row;
-  justify-content: center;
   align-items: center;
   width: 100%;
   margin: 0 auto;
-  padding: 0;
   height: 2rem;
 }
 
 mat-button-toggle:hover {
-  background-color: #ced4da !important;
+  background-color: #ced4da;
 }
 
 .material-symbols-outlined {
@@ -20,20 +26,20 @@ mat-button-toggle:hover {
 }
 
 .mat-toolbar-single-row {
-  padding: 0;
   height: auto;
-    padding: 0 2rem;
+  padding: 0 1rem;
 }
 
-.api, p, a, img {
+.api,
+p,
+a,
+img {
   font-size: 10px;
   margin: 0 auto;
   padding: 0;
 }
 
-
-/* @media (max-width: 860px) {
-  mat-button-toggle span {
-    display: none;
-  }
-} */
+.logout {
+  display: flex;
+  justify-content: center;
+}

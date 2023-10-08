@@ -14,6 +14,6 @@ export class CategoryService {
     { name: 'Sports', icon: 'sports_football' },
     { name: 'Technology', icon: 'important_devices' },
     { name: 'Search', icon: 'search' },
-    { name: 'Liked', icon: 'thumb_up' },
+    { name: 'Liked', icon: 'favorite' },
   ];
 }

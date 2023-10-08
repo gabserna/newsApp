@@ -4,9 +4,6 @@ import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/categories.service';
 import { NewsService } from 'src/app/services/news.service';
-import {MatIconModule} from '@angular/material/icon';
-import {MatButtonModule} from '@angular/material/button';
-import {MatToolbarModule} from '@angular/material/toolbar';
 
 @Component({
   selector: 'app-toolbar',
@@ -15,6 +12,14 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 })
 
 export class ToolbarComponent implements OnInit {
+  isSmallScreen = false;
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.isSmallScreen = event.target.innerWidth < 860;
+    this.windowInnerWidth = window.innerWidth;
+  }
+  
   isAuthenticated: boolean = false;
   windowInnerWidth: number;
 
@@ -32,11 +37,6 @@ export class ToolbarComponent implements OnInit {
 
   selectedCategory: string = 'general';
   @Output() categoryChanged = new EventEmitter<string>();
-
-  @HostListener('window:resize', ['$event'])
-  onResize(event: any) {
-    this.windowInnerWidth = window.innerWidth;
-  }
 
   onCategoryChange(event: MatButtonToggleChange) {
     this.selectedCategory = event.value;
@@ -56,6 +56,7 @@ export class ToolbarComponent implements OnInit {
   }
 
 }
+
 
 
 

@@ -1,10 +1,9 @@
 <div class="container">
-  <!-- <app-toolbar></app-toolbar> -->
   <app-header></app-header>
 
   <app-toolbar
-  (categoryChanged)="onCategoryChanged($event)"
-    *ngIf="!isLoginPage"
+    (categoryChanged)="onCategoryChanged($event)"
+    *ngIf="isLoggedIn && !isLoginPage"
   ></app-toolbar>
 
   <router-outlet></router-outlet>

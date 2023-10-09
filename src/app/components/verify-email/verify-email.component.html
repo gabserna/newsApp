@@ -1,5 +1,5 @@
 <div class="container">
-  <mat-card class="displayTableCell">
+  <mat-card @myInsertRemoveTrigger class="displayTableCell">
     <mat-card-content class="authBlock">
       <h3>Thank You for Registering</h3>
       <div class="formGroup" *ngIf="authService.userData as user">

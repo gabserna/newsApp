@@ -30,6 +30,7 @@ p {
 
 .banner {
     background-image: url("/assets/header.jpg");
+    background-color: #023e8a;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;

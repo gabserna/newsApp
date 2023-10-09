@@ -1,0 +1,51 @@
+
+.clock {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+
+.header {
+    background-color: #000;
+    color: #fca311;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+.api p {
+    font-size: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 0;
+    padding-top: 2px;
+}
+
+.banner {
+    background-image: url("/assets/header.jpg");
+    background-color: #023e8a;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 2em;
+}
+.theHeader, small {
+    font-family: 'Montserrat', sans-serif;
+    color: #f8edeb;
+    margin: 0;
+    padding: 0 2rem;
+    font-size: 1rem;
+    display: flex;
+    justify-content: flex-end;
+    font-weight: bolder;
+    align-items: center;
+    text-transform: uppercase;
+}

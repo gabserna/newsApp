@@ -1,0 +1,13 @@
+<mat-toolbar>
+  <mat-button-toggle-group [(ngModel)]="selectedCategory" (change)="onCategoryChange($event)">
+    <mat-button-toggle *ngFor="let category of categories" [value]="category.name" (click)="newsService.show(category.name)">
+      <mat-icon *ngIf="isSmallScreen">{{ category.icon }}</mat-icon>
+      <span *ngIf="!isSmallScreen">{{ category.name }}</span>
+    </mat-button-toggle>
+  </mat-button-toggle-group>
+
+  <span *ngIf="authService.isLoggedIn" class="material-symbols-outlined logout" (click)="authService.SignOut()">
+    <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="logout" id="logout"></mat-icon>
+    logout
+  </span>
+</mat-toolbar>

@@ -9,23 +9,27 @@ h2, h3 {
   margin: 0;
 }
 
-.h1Headlines {
-  background-color: #0a3161;
-  font-size: 2.5vw;
-}
-
-.h2Headlines {
-  background-color: #d90429;
+h3 #searchTitler {
+  margin: 0 auto;
 }
 
 .news-list {
   margin: 0 auto;
   width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 mat-card {
+  width: 15em;
+  height: 12rem;
+  overflow: hidden;
   margin: 10px;
+  padding: 10px;
   background-color: #d1d7dc;
+  flex: 0 0 calc(25% - 20px);
+  margin-bottom: 20px;
 }
 
 mat-card-header {
@@ -33,23 +37,43 @@ mat-card-header {
   flex-direction: column;
 }
 
-#actions {
+mat-card-content {
   display: flex;
   justify-content: space-between;
   margin: 0;
   padding: 0;
 }
 
+mat-icon {
+  align-items: center;
+  justify-content: flex-end;
+  text-align: center;
+}
+
 .cardButton {
+  margin: 0 auto;
   background-color: #003566;
   padding: 5px 10px;
   text-decoration: none;
   border: none;
+  color: #d1d7dc !important;
 }
 
-a {
-    color: white !important;
+#subtitler {
+  color: #000 !important;
+  font-weight: bolder;
 }
 .cardButton:hover {
   background-color: #d90429;
+}
+
+.searchInput {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 40%;
+}
+.goBackButton {
+  margin: 0 auto;
+  width: 40%;
 }

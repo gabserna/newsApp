@@ -11,6 +11,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import {MatAccordion, MatExpansionModule} from '@angular/material/expansion';
+
 
 @NgModule({
   declarations: [],
@@ -28,6 +30,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatInputModule,
     MatProgressBarModule,
     MatInputModule,
+    MatExpansionModule,
   ],
   exports: [
     CommonModule,
@@ -43,6 +46,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     MatInputModule,
     MatProgressBarModule,
     MatInputModule,
+    MatExpansionModule,
   ],
 })
 export class MaterialModule {}

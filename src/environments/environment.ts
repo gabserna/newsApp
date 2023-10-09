@@ -4,6 +4,8 @@ export const environment = {
   newsApiTwo: { apiKey: '2dc8de50066345a48d40b362faeb8b76' },
   newsApiThree: { apiKey: '25e51eebb3e843a48f30a351675dc2cc' },
   newsApiFour: { apiKey: '88619abd5e234dbdbd034c607dae97dd' },
+  newsApiFive: { apiKey: '0266bc550d3e46f9893b52815d2118f2' },
+
   firebase: {
     apiKey: 'AIzaSyCRNjlAyNOhhSpCayhj8FGHHhbw4MtkpKA',
     authDomain: 'news-project-579a3.firebaseapp.com',

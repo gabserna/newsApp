@@ -1,45 +1,40 @@
 <div class="news-list">
-  <app-submenu (categoryChanged)="onCategoryChanged($event)"></app-submenu>
-  <app-search></app-search>
   <mat-card-title id="topHeadlinesTitle">
-    <h1 class="h1Headlines">Top Headlines</h1>
-    <h2 class="h2Headlines">{{ selectedCategory }}</h2>
+    <h1 class="h1Headlines">Top Headlines: <small>{{ selectedCategory }}</small></h1>
+    <mat-divider class="custom-divider"></mat-divider>
   </mat-card-title>
-
-  <div class="category-selector"></div>
 
   <div class="news-items">
     <mat-card *ngFor="let article of headlines" class="news-item">
-      <mat-card-header>
-        <mat-card-title>{{ article.title }}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <p>{{ article.description }}</p>
-      </mat-card-content>
-
-      <mat-card-content id="actions">
-        <mat-card-actions>
-          <a mat-button [href]="article.url" target="_blank" class="cardButton">
+      <a href="{{ article.url }}" target="_blank">
+        <div class="image-container">
+          <img
+            src="{{ article.urlToImage ? article.urlToImage : defaultImage }}"
+            alt="img"
+            id="snapshotImg"
+          />
+          <a [href]="" target="_blank" class="like">
             <mat-icon
+            style="font-size: 20px;"
               aria-hidden="false"
               aria-label="icon"
-              fontIcon="launch"
+              fontIcon="favorite"
             ></mat-icon>
-            Open</a
-          >
-        </mat-card-actions>
-
-        <mat-card-actions>
-          <a mat-button [href]="" target="_blank" class="cardButton">
-            <mat-icon
-              aria-hidden="false"
-              aria-label="icon"
-              fontIcon="thumb_up"
-            ></mat-icon>
-            Like
           </a>
-        </mat-card-actions>
-      </mat-card-content>
+        </div>
+      </a>
+      <mat-card-header>
+        <mat-card-title>
+          <h3>
+            <a id="subtitler">{{ article.title }}</a>
+          </h3>
+          <!-- <p id="articleDescription">{{ truncatedText(article.description) }}</p> -->
+          <p id="articlePublished">
+            <em>{{ article.publishedAt }}</em>
+          </p>
+        </mat-card-title>
+      </mat-card-header>
+
     </mat-card>
     <mat-divider></mat-divider>
   </div>

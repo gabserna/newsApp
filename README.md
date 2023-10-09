@@ -109,3 +109,8 @@ Top-Headlines (Titulares principales):
 - Debe permitir al usuario dar "Me gusta" o seguir un artículo.
 ^ Agregará la URL del artículo al "Objeto de artículos favoritos del usuario".
 ```
+
+
+- npm i firebase
+- npm i @angular/fire
+- ng build --output-path docs --base-href /newsapp

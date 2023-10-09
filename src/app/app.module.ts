@@ -5,7 +5,6 @@ import { AppComponent } from './app.component';
 import { NewsListComponent } from './components/news-list/news-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarComponent } from './components/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { NewsService } from './services/news.service';
 import { MaterialModule } from './modules/material.module';
@@ -21,35 +20,58 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
 import { MatIconModule } from '@angular/material/icon';
 import { SearchComponent } from './components/search/search.component';
-import { SubmenuComponent } from './components/submenu/submenu.component';
+import { CategoryService } from './services/categories.service';
+import { AuthService } from './services/auth.service';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    NewsListComponent,
-    NavbarComponent,
-    LoginComponent,
-    RegistrationComponent,
-    ForgotPasswordComponent,
-    VerifyEmailComponent,
-    SearchComponent,
-    SubmenuComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    MaterialModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    AngularFireAuthModule,
-    AngularFireStorageModule,
-    AngularFireDatabaseModule,
-    MatIconModule,
-  ],
-  providers: [NewsService],
-  bootstrap: [AppComponent],
+    declarations: [
+        AppComponent,
+        NewsListComponent,
+        LoginComponent,
+        RegistrationComponent,
+        ForgotPasswordComponent,
+        VerifyEmailComponent,
+        SearchComponent,
+        ToolbarComponent,
+        HeaderComponent,
+    ],
+    providers: [AuthService, NewsService, CategoryService],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        MaterialModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule,
+        AngularFireAuthModule,
+        AngularFireStorageModule,
+        AngularFireDatabaseModule,
+        MatIconModule,
+        ReactiveFormsModule,
+        MatInputModule,
+        MatButtonModule,
+        MatIconModule,
+        MatFormFieldModule,
+        MatButtonModule,
+        MatToolbarModule,
+        MatSidenavModule,
+        MatListModule,
+        MatDividerModule,
+        MatSlideToggleModule
+    ]
 })
 export class AppModule {}

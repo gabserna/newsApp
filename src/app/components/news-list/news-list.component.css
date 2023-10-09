@@ -1,4 +1,3 @@
-
 h1,
 h2 {
   margin-top: 1rem;
@@ -10,23 +9,55 @@ h2 {
   margin: 0;
 }
 
+h3 {
+  line-height: 3vh;
+}
+
 .h1Headlines {
   background-color: #0a3161;
   font-size: 2.5vw;
 }
 
-.h2Headlines {
+.custom-divider {
+  height: 2px;
   background-color: #d90429;
 }
 
+
 .news-list {
+  width: 90% !important;
   margin: 0 auto;
-  width: 90%;
+  width: auto;
+}
+
+.news-items {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 mat-card {
-  margin: 10px;
+  width: 20em;
+  overflow: hidden;
+  margin: 5px;
+  padding: 0;
   background-color: #d1d7dc;
+  flex: 0 0 calc(20% - 10px);
+  margin-bottom: 10px;
+}
+
+.mat-mdc-card-header {
+  display: flex;
+  padding: 0 10px;
+  line-height: 0;
+}
+
+#snapshotImg {
+  width: 100%;
+  padding-bottom: 0;
 }
 
 #actions {
@@ -43,9 +74,42 @@ mat-card {
   border: none;
 }
 
-a {
+/* a {
     color: white !important;
+} */
+#subtitler {
+  color: #000 !important;
+  font-weight: bolder;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
 }
-.cardButton:hover {
-  background-color: #d90429;
+
+
+#articleDescription,
+#articlePublished {
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+}
+
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.like {
+  color: #0862b5;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.like:hover {
+  color: #d90429;
 }

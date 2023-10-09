@@ -12,9 +12,6 @@ export class NewsListComponent implements OnInit {
   headlines: any;
   selectedCategory$: any
 
-  // selectedCategory: string
-  
-
   categories = this.categoryService.categories;
   constructor(private newsService: NewsService, private categoryService: CategoryService) {
     this.selectedCategory$ = this.newsService.selectedCategory$;

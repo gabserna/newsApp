@@ -5,7 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class CategoryService {
   categories = [
-    // { name: 'Start', icon: 'home' },
     { name: 'General', icon: 'description' },
     { name: 'Business', icon: 'add_business' },
     { name: 'Entertainment', icon: 'theater_comedy' },

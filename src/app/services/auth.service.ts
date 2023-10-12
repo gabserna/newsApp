@@ -123,6 +123,7 @@ export class AuthService {
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
+      likedArticles: user.likedArticle,
     };
 
     return userRef.set(userData, {

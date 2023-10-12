@@ -47,6 +47,10 @@ export class NewsListComponent implements OnInit {
       return title;
     }
   }
+
+  likedArticle(articleURl: string) {
+    console.log(articleURl);
+  }
   
 }
 

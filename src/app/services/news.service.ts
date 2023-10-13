@@ -15,10 +15,9 @@ export class NewsService {
 
   constructor(private http: HttpClient) {}
 
-  show(category:string) {
+  show(category: string) {
     this.selectedCategory.next(category);
     console.log(typeof category);
-    
   }
 
   getTopHeadlines(category: string) {

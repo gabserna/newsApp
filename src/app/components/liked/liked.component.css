@@ -1,3 +1,8 @@
+h1 {
+    margin: 0 auto;
+    text-align: center;
+}
+
 h1,
 h2, h3 {
   margin-top: 1rem;
@@ -9,9 +14,6 @@ h2, h3 {
   margin: 0;
 }
 
-h3 #searchTitler {
-  margin: 0 auto;
-}
 
 .news-list {
   margin: 0 auto;
@@ -67,7 +69,7 @@ mat-icon {
   background-color: #d90429;
 }
 
-.searchInput {
+.likedSection {
   display: flex;
   flex-direction: column;
   margin: 0 auto;

@@ -13,14 +13,6 @@ export class AppComponent {
 
   isLoggedIn: boolean = false;
   isLoginPage: boolean = false;
-
-  // constructor(
-  //   private activatedRoute: ActivatedRoute) {
-  //   this.activatedRoute.url.subscribe((segments) => {
-  //     this.isLoginPage = segments.some((segment) => segment.path === 'login');
-  //     // console.log('Is login page?', this.isLoginPage);
-  //   });
-  // }
   
   constructor(
     private activatedRoute: ActivatedRoute,

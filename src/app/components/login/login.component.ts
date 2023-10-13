@@ -2,13 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/services/auth.service';
 import {
   trigger,
-  state,
   style,
   animate,
   transition,
-  query,
-  animateChild,
-  group,
   // ...
 } from '@angular/animations';
 
@@ -17,34 +13,20 @@ import {
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   animations: [
-    trigger('routeAnimations', [
-      transition('* <=> *', [
-        style({ position: 'relative' }),
-        query(
-          ':enter, :leave',
-          [
-            style({
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-            }),
-          ],
-          { optional: true }
-        ),
-        query(':enter', [style({ left: '-100%' })], { optional: true }),
-        query(':leave', animateChild(), { optional: true }),
-        group([
-          query(
-            ':leave',
-            [animate('300ms ease-out', style({ left: '100%' }))],
-            { optional: true }
-          ),
-          query(':enter', [animate('300ms ease-out', style({ left: '0%' }))], {
-            optional: true,
-          }),
-        ]),
-        query(':enter', animateChild(), { optional: true }),
+    trigger('myInsertRemoveTrigger', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('1s', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [animate('1s', style({ opacity: 0 }))]),
+    ]),
+    trigger('myOtherInsertRemoveTrigger', [
+      transition(':enter', [
+        style({ transform: 'translateX(-100%)' }),
+        animate('0.5s', style({ transform: 'translateX(0)' })),
+      ]),
+      transition(':leave', [
+        animate('0.5s', style({ transform: 'translateX(100%)' })),
       ]),
     ]),
   ],

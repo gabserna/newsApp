@@ -113,3 +113,5 @@ Top-Headlines (Titulares principales):
 
 - npm i firebase
 - npm i @angular/fire
+- ng build --output-path docs --base-href /newsapp
+- deploy still need to work!!

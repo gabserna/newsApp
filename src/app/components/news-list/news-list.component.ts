@@ -1,6 +1,7 @@
 import { Component, Input, OnChanges, OnInit } from '@angular/core';
 import { NewsService } from '../../services/news.service';
 import { CategoryService } from '../../services/categories.service';
+import { LikedService, LikedArticle } from 'src/app/services/liked.service';
 
 @Component({
   selector: 'app-news-list',
@@ -12,11 +13,12 @@ export class NewsListComponent implements OnInit {
   headlines: any;
   selectedCategory$: any
 
-  // selectedCategory: string
-  
-
   categories = this.categoryService.categories;
-  constructor(private newsService: NewsService, private categoryService: CategoryService) {
+  constructor(
+    private newsService: NewsService,
+    private categoryService: CategoryService,
+    private likedService: LikedService
+    ) {
     this.selectedCategory$ = this.newsService.selectedCategory$;
     console.log(this.selectedCategory);
   }
@@ -50,6 +52,17 @@ export class NewsListComponent implements OnInit {
       return title;
     }
   }
+
+  likedArticles(articleUrl: string) {
+    const likedArticle: LikedArticle = {
+      url: articleUrl,
+      title: 'title',
+      description: 'description',
+    };
+    this.likedService.addLikedArticle(likedArticle);
+    console.log(articleUrl);
+  }
+  
   
 }
 

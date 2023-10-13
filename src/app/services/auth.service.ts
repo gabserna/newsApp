@@ -5,8 +5,9 @@ import * as auth from 'firebase/auth';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { take, map } from 'rxjs/operators';
-import { Subject } from 'rxjs';
+import { take, map, switchMap } from 'rxjs/operators';
+import { Subject, of } from 'rxjs';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -123,6 +124,8 @@ export class AuthService {
       displayName: user.displayName,
       photoURL: user.photoURL,
       emailVerified: user.emailVerified,
+      likedArticles: [],
+      // likedArticles: user.likedArticles,
     };
 
     return userRef.set(userData, {
@@ -140,5 +143,18 @@ export class AuthService {
   isAuthenticated(): Observable<boolean> {
     return this.isAuthenticatedSubject.asObservable();
   }
+
+  getUserData(): Observable<User> {
+    return this.afAuth.authState.pipe(
+      switchMap((user) => {
+        if (user) {
+          return this.afs.doc<User>(`users/${user.uid}`).valueChanges();
+        } else {
+          return of(null);
+        }
+      })
+    );
+  }
+  
   
 }

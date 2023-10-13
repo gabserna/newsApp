@@ -33,6 +33,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { HeaderComponent } from './components/header/header.component';
+import { LikedComponent } from './components/liked/liked.component';
 
 @NgModule({
     declarations: [
@@ -45,6 +46,7 @@ import { HeaderComponent } from './components/header/header.component';
         SearchComponent,
         ToolbarComponent,
         HeaderComponent,
+        LikedComponent,
     ],
     providers: [AuthService, NewsService, CategoryService],
     bootstrap: [AppComponent],

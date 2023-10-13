@@ -13,14 +13,6 @@
             alt="img"
             id="snapshotImg"
           />
-          <a [href]="" target="_blank" class="like">
-            <mat-icon
-            style="font-size: 20px;"
-              aria-hidden="false"
-              aria-label="icon"
-              fontIcon="favorite"
-            ></mat-icon>
-          </a>
         </div>
       </a>
       <mat-card-header>
@@ -34,7 +26,9 @@
           </p>
         </mat-card-title>
       </mat-card-header>
-
+      <a [href]="" target="_blank" class="like" (click)='likedArticles(article.url)'>
+        <mat-icon style="font-size: 20px;" aria-hidden="false" aria-label="icon" fontIcon="favorite"></mat-icon>
+      </a>
     </mat-card>
     <mat-divider></mat-divider>
   </div>

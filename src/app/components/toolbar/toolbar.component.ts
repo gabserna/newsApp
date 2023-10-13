@@ -46,6 +46,8 @@ export class ToolbarComponent implements OnInit {
       this.router.navigate(['search']);
     } else if (event.value === 'Start') {
       this.router.navigate(['top-headlines']);
+    } else if (event.value === 'Liked') {
+      this.router.navigate(['Liked'])
     }
   }
 

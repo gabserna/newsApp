@@ -1,0 +1,33 @@
+<div class="likedSection">
+  <h1>User liked articles</h1>
+
+  <button
+    mat-button
+    (click)="goBackToTopHeadlines()"
+    class="cardButton goBackButton"
+  >
+    <mat-icon aria-hidden="false" aria-label="icon">arrow_back</mat-icon>
+    <span>Go Back</span>
+  </button>
+  <br />
+  <mat-divider></mat-divider>
+</div>
+
+
+<div class="news-list">
+  <mat-card *ngFor="let likedArticle of likedArticles" class="searchResults">
+    <mat-card-header>
+      <mat-card-title>
+        <h3>
+          <a id="subtitler" target="_blank" [href]="likedArticle.url">
+            {{ likedArticle.title }}
+          </a>
+        </h3>
+        <p>{{ likedArticle.description }}</p>
+      </mat-card-title>
+    </mat-card-header>
+  </mat-card>
+  
+  
+  <mat-divider></mat-divider>
+</div>

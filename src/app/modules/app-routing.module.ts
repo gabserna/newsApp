@@ -6,8 +6,10 @@ import { RegistrationComponent } from '../components/registration/registration.c
 import { ForgotPasswordComponent } from '../components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from '../components/verify-email/verify-email.component';
 import { SearchComponent } from '../components/search/search.component';
+import { LikedComponent } from '../components/liked/liked.component';
 
 import { AuthGuard } from '../guard/auth.guard';
+
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
@@ -16,7 +18,9 @@ const routes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'verify-email-address', component: VerifyEmailComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'Liked', component: LikedComponent },
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],

@@ -126,3 +126,4 @@ Top-Headlines (Titulares principales):
 
 
 ng add angular-cli-ghpages
+ng deploy --repo=https://github.com/gabserna/newsApp.git --name="gabserna" --email=gabriel.sernapoot6740@stu.mtec.edu

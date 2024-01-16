@@ -119,7 +119,7 @@ Top-Headlines (Titulares principales):
 # from: https://angular.io/guide/deployment
 
 -npm install lite-server --save-dev
--npx lite-server --baseDir="dist"
+-npx lite-server --baseDir="docs"
 -ng add @angular/fire
  -deploy/hosting
 

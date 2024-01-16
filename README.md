@@ -127,3 +127,12 @@ Top-Headlines (Titulares principales):
 
 ng add angular-cli-ghpages
 ng deploy --repo=https://github.com/gabserna/newsApp.git --name="gabserna" --email=gabriel.sernapoot6740@stu.mtec.edu
+
+# posiblemente resuelva 
+
+NOT SUPPORTED: keyword "id", use "$id" for schema ID
+
+
+ng add @angular/material
+npm uninstall @angular/material
+ng add @angular/material@16.2.13

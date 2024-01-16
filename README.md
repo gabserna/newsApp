@@ -116,9 +116,13 @@ Top-Headlines (Titulares principales):
 - ng build --output-path docs --base-href /newsapp
 - deploy still need to work!!
 
+# from: https://angular.io/guide/deployment
+
 -npm install lite-server --save-dev
 -npx lite-server --baseDir="dist"
-
-
-ng add @angular/fire
+-ng add @angular/fire
  -deploy/hosting
+
+
+
+ng add angular-cli-ghpages

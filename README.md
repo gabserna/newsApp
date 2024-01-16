@@ -115,3 +115,10 @@ Top-Headlines (Titulares principales):
 - npm i @angular/fire
 - ng build --output-path docs --base-href /newsapp
 - deploy still need to work!!
+
+-npm install lite-server --save-dev
+-npx lite-server --baseDir="dist"
+
+
+ng add @angular/fire
+ -deploy/hosting

@@ -137,7 +137,12 @@ ng add @angular/material
 npm uninstall @angular/material
 ng add @angular/material@16.2.13
 
-
-
-npm install --legacy-peer-deps @angular-eslint/schematics@next
-npm install -g @angular-devkit/core
+- npm install --legacy-peer-deps @angular-eslint/schematics@next
+- npm install -g @angular-devkit/core
+- npm uninstall -g @angular/cli
+- npm install -g @angular/cli
+- npm cache clean --force
+- npm uninstall angular-cli-ghpages
+- npm install angular-cli-ghpages
+- ng deploy
+--success!!!

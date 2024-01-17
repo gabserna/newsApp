@@ -136,3 +136,8 @@ NOT SUPPORTED: keyword "id", use "$id" for schema ID
 ng add @angular/material
 npm uninstall @angular/material
 ng add @angular/material@16.2.13
+
+
+
+npm install --legacy-peer-deps @angular-eslint/schematics@next
+npm install -g @angular-devkit/core

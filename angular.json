@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "newsApp:build:production"
+              "browserTarget": "newsApp:build:production"
             },
             "development": {
-              "buildTarget": "newsApp:build:development"
+              "browserTarget": "newsApp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "newsApp:build"
+            "browserTarget": "newsApp:build"
           }
         },
         "test": {

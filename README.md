@@ -1,7 +1,5 @@
 # NewsApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.3.
-
 ## Requirements
 
 ```
@@ -73,74 +71,32 @@ Pages:
 
 ## Development server
 
+clone repo
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
-
-
-
-
-
-
-
-# me
 ```
-Top-Headlines (Titulares principales):
-- Debe llenar la página con artículos de noticias del endpoint 'top-headlines' de la API.
-- Debe permitir al usuario filtrar artículos según las categorías disponibles.
-- Debe permitir al usuario dar "Me gusta" o seguir un artículo.
-^ Agregará la URL del artículo al "Objeto de artículos favoritos del usuario".
+npm install --legacy-peer-deps
+ng build
+ng serve
+ng build --output-path docs --base-href /newsapp
+ng deploy
 ```
-
-
-- npm i firebase
-- npm i @angular/fire
-- ng build --output-path docs --base-href /newsapp
-- deploy still need to work!!
-
-# from: https://angular.io/guide/deployment
-
--npm install lite-server --save-dev
--npx lite-server --baseDir="docs"
--ng add @angular/fire
- -deploy/hosting
-
-
-
-ng add angular-cli-ghpages
-ng deploy --repo=https://github.com/gabserna/newsApp.git --name="gabserna" --email=gabriel.sernapoot6740@stu.mtec.edu
 
 # solution!
-
 NOT SUPPORTED: keyword "id", use "$id" for schema ID
 
-- ng add @angular/material
-- npm uninstall @angular/material
-- ng add @angular/material@16.2.13
-- npm install --legacy-peer-deps @angular-eslint/schematics@next
-- npm install -g @angular-devkit/core
-- npm uninstall -g @angular/cli
-- npm install -g @angular/cli
-- npm cache clean --force
-- npm uninstall angular-cli-ghpages
-- npm install angular-cli-ghpages
-- ng deploy
+```
+ng add @angular/material
+npm uninstall @angular/material
+ng add @angular/material@16.2.13
+npm install --legacy-peer-deps @angular-eslint/schematics@next
+npm install -g @angular-devkit/core
+npm uninstall -g @angular/cli
+npm install -g @angular/cli
+npm cache clean --force
+npm uninstall angular-cli-ghpages
+npm install angular-cli-ghpages
+ng deploy
 --success!!!
+```

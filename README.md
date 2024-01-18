@@ -79,7 +79,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 npm install --legacy-peer-deps
 ng build
 ng serve
-ng build --output-path docs --base-href /newsapp
+ng b --output-path docs --base-href /newsApp/
 ng deploy
 ```
 

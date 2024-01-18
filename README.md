@@ -68,35 +68,25 @@ Pages:
             - Minimum Content Loaded Should be The URL and Thumbnails of Articles
 ```
 
-
 ## Development server
 
+```
 clone repo
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-```
 npm install --legacy-peer-deps
-ng build
-ng serve
-ng b --output-path docs --base-href /newsApp/
-ng deploy
+npm run buildprod
 ```
+
 
 # solution!
 NOT SUPPORTED: keyword "id", use "$id" for schema ID
 
 ```
-ng add @angular/material
-npm uninstall @angular/material
-ng add @angular/material@16.2.13
-npm install --legacy-peer-deps @angular-eslint/schematics@next
-npm install -g @angular-devkit/core
-npm uninstall -g @angular/cli
-npm install -g @angular/cli
 npm cache clean --force
-npm uninstall angular-cli-ghpages
+use: npx npkill to delete /node_modules
+ng add @angular/material@16.2.13
+npm i --legacy-peer-deps @angular-eslint/schematics@next
+npm i -g @angular-devkit/core
+npm i -g @angular/cli
 npm install angular-cli-ghpages
-ng deploy
---success!!!
+npm run buildprod
 ```
